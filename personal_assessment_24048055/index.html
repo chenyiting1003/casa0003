@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- head of webset -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore London public transport trends with interactive visualizations, including bus, underground, and station analysis.">
+
+    <title>LONDON PUBLIC TRANSPORTATION</title>
+
+    <!-- text -->
+    <link href="https://fonts.googleapis.com/css?family=Jost:200,200i,300,300i|Varela+Round:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i|Nunito:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    
+    <!-- Vendor CSS Files -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    
+
+<script src="http://d3js.org/d3.v5.min.js"></script>
+<script src="http://dimplejs.org/dist/dimple.v2.3.0.min.js"></script>
+
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css" rel="stylesheet"/>
+
+</head>
+
+
+<body>
+
+  <!-- ======= Header ======= -->
+    <!-- ======= Top guide ======= --> 
+    <header id="header" class="d-flex align-items-center">
+        <div class="container d-flex align-items-center justify-content-between">
+          <h1 class="logo"><a href="index.html">LONDON-PUBIC-TRANSPORT</a></h1>
+          <nav id="navbar" class="navbar order-last order-lg-0">
+            <ul>
+              <li><a class="nav-link scrollto" href="#intro">Intro</a></li>
+              <li><a class="nav-link scrollto" href="#public-transport">Public transport types</a></li>
+              <li><a class="nav-link scrollto" href="#underground">Underground travel</a></li>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+          </nav>
+        </div>
+      </header>
+      <!-- End Header -->
+    
+      <!-- ======= Open page ======= -->
+      <section id="hero" class="d-flex align-items-center">
+        <div class="container position-relative" data-aos="fade-up" data-aos-delay="500">
+          <h1>Public transportation options:</h1>
+          <h2>Exploring London's Transport Trends & Station Analysis</h2>
+          <a href="#intro" class="btn-get-started scrollto">Explore Now</a>
+        </div>
+      </section><!-- End Hero -->
+    
+      <main id="main">
+    
+        <!-- ======= Introduction ======= -->
+        <section id="intro" class="intro">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-6 pt-4 pt-lg-0 order-1 order-lg-2 content" data-aos="fade-right">
+                <div class="section-title">
+                  <span>INTRO</span>
+                  <h2>INTRO</h2>
+                </div>
+                <h3>London's diverse public transport system</h3>
+                <p class="fst-normal">
+                  London, one of the busiest cities in the world, has a diverse, efficient and well-connected public transportation system that offers a variety of options for residents and visitors.
+                  <p>
+                  In an already expensive city like London, Uber and black taxis are very expensive. Fortunately, no matter where you want to go in London, you can use London's extraordinary public transportation system to get to your destination quickly and easily. 
+                  <p>
+                  The red buses that shuttle through the streets, the railways and light rails that connect the city center to the suburbs, the novel water taxis that run through the Thames, and the London Underground (The Tube), these transportation modes together weave a huge urban travel network.  
+                  <p>
+                    <h3>Imagine yourself in London on a sunny spring weekend, exploring this beautiful city...</h3>
+                  <p>
+                    <h3>But which public transportation should you choose?</h3>
+                  </p>
+                  <p>
+                    <h3>We will explore the following questions:</h3>
+                 <p>
+                    How are public transport patterns changing in London?
+                    <p>
+                    How are public transport stations distributed spatially?
+                    <p>
+                    How has public transport service changed?
+                 
+                </p>
+              </div>
+              <div class="col-lg-6 order-2 order-lg-1" data-aos="fade-left">
+                <img src="assets/img/transport_way.jpg" class="img-fluid" alt="">
+              </div>
+              
+            </div>
+    
+          </div>
+        </section><!-- End Intro Section -->
+    
+        <!-- ======= Public transport types ======= -->
+        <section id="public-transport" class="public-transport">
+          <div class="container">
+              <div class="section-title">
+                  <span>Public Transport Trends</span>
+                  <h2>Public Transport Trends</h2>
+              </div>
+              <p class="description">
+                <h3>Glory, sudden decline and recovery</h3>
+              <p>
+                Since 2010, buses and subways have become the mainstay of urban travel, with an average annual passenger flow of about 40 million. Although COVID-19 has almost stopped public transportation, the city is gradually recovering. Overground, DLR and Tram have remained stable, serving residents in the outer London area.
+              </p>
+          </div>
+
+          <div id="chartWrapper">
+            <div id="chartContainer">
+              <p style="text-align: center; margin-bottom: 5px;">Trends in London Public Transport Usage 2010-2023(Yearly Passengers)</p> 
+            </div>
+            <div id="subChartsContainer">
+              <div id="busChartContainer">
+                <p style="text-align: center; margin-bottom: 5px;">Bus Journeys Trends 2010-2023(Yearly Passengers)</p>
+              </div>
+              <div id="undergroundChartContainer">
+                <p style="text-align: center; margin-bottom: 5px;">Underground Journeys Trends 2010-2023(Yearly Passengers)</p>
+              </div>   
+            </div>
+          </div>
+
+          <script>
+            // D3 .then() method
+            d3.tsv("data/tfl-journeys-cleaned.tsv").then(function(data) {
+                console.log("Original data loaded:", data.length, "rows");
+                
+                // clean data
+                data = data.filter(d => d.Year !== "2024");
+                data.forEach(d => {
+                    d.Year = d.Year.toString().trim();
+                    d.Passengers = +d.Passengers || 0;
+                });
+
+                //mainchart
+                var svg = dimple.newSvg("#chartContainer", "100%", "100%");
+                var myChart = new dimple.chart(svg, data);
+                myChart.setBounds("15%", "5%", "80%","80%");
+                
+                var x = myChart.addCategoryAxis("x", "Year");
+                x.addOrderRule("Year");
+                
+                var y = myChart.addMeasureAxis("y", "Passengers");
+                y.title = "Number of Passengers (Millions)";
+                
+                var s = myChart.addSeries("Transport Mode", dimple.plot.area);
+                
+                // color
+                var colorScale = {
+                  "Tram Journeys": "#783c2b",
+                  "DLR Journeys": "#9c4a4a",
+                  "Overground Journeys": "#f3dca6",
+                  "Underground journeys": "#e37c58",
+                  "Bus journeys": "#f3dac4"
+                };
+
+                Object.keys(colorScale).forEach(mode => {
+                  myChart.assignColor(mode, colorScale[mode]);
+                });
+
+                myChart.addLegend("10%", "2%", "80%", "10%", "left");
+                
+                try {
+                    myChart.draw();
+                    console.log("Chart drawn successfully");            
+
+                    // Modify tooltip display
+                    s.getTooltipText = function(e) {
+                      return [
+                          "Year: " + e.x,
+                          "Transport Mode: " + e.aggField[0],
+                          "Passengers: " + e.y.toFixed(2) + "m" 
+                       ];
+                    };  
+                } catch (e) {
+                    console.error("Error drawing chart:", e);
+                    document.getElementById("chartContainer").innerHTML = 
+                        "<div style='color:red;padding:20px;'>Error drawing chart: " + e.message + "</div>";
+                }
+
+                 // Bus Journeys
+                 var svgBus = dimple.newSvg("#busChartContainer", "100%", "100%");
+
+                 var busData = data.filter(d => d["Transport Mode"] === "Bus journeys");
+                 var busChart = new dimple.chart(svgBus, busData);
+                 busChart.setBounds("10%", "10%", "80%","80%");
+                 
+                 var xBus = busChart.addCategoryAxis("x", "Year");
+                 xBus.addOrderRule("Year");
+    
+                 var yBus = busChart.addMeasureAxis("y", "Passengers");
+                 yBus.title = "Bus Passengers (m)"; 
+
+                 var sBus = busChart.addSeries(null, dimple.plot.line);
+                
+                 busChart.assignColor("Bus journeys", "#f3dac4"); 
+                 
+                 sBus.getTooltipText = function(e) {
+                  return [
+                    "Year: " + e.x,
+                    "Bus Journeys",
+                    "Passengers: " + e.y.toFixed(2) + "m"
+                  ];
+                };
+
+                 busChart.draw();
+
+                 // Underground Journeys 
+                 var svgUnderground = dimple.newSvg("#undergroundChartContainer",  "100%", "100%");
+
+                 var undergroundData = data.filter(d => d["Transport Mode"] === "Underground journeys");
+
+                 var undergroundChart = new dimple.chart(svgUnderground, undergroundData);
+                 undergroundChart.setBounds("10%", "10%", "80%","80%"); 
+
+                 var xUnderground = undergroundChart.addCategoryAxis("x", "Year");
+                 xUnderground.addOrderRule("Year");
+
+                 var yUnderground = undergroundChart.addMeasureAxis("y", "Passengers"); 
+                 yUnderground.title = "Underground Passengers (m)";
+                 
+                 var sUnderground = undergroundChart.addSeries(null, dimple.plot.line);
+                 undergroundChart.assignColor("Underground journeys", colorScale["Underground journeys"]); 
+                 sUnderground.getTooltipText = function(e) {
+                  return [
+                    "Year: " + e.x,
+                    "Underground Journeys",
+                    "Passengers: " + e.y.toFixed(2) + "m"
+                  ];
+                };
+                 
+                 undergroundChart.draw();
+
+                 console.log("Bus and Underground charts drawn successfully");
+
+            }).catch(function(error) {
+                console.error("Failed to load TSV file:", error);
+            });
+        </script>
+        
+      </section>
+
+      <section id="public-transport" class="public-transport">
+        <div class="container">
+            <div class="section-title">
+                <span>Monthly Passenger Trends</span>
+                <h2>Monthly Passenger Trends</h2>
+            </div>
+        </div>
+
+        <div class="content-container">
+            <!-- text -->
+            <div id="descriptionContainer">
+                <h3>Seasonal codes for London public transport</h3>
+                <p>
+                  Spring and autumn (March-May & September-November) see the highest passenger flow - perhaps because the weather is pleasant, and tourists and commuters gather in London to experience the unique charm of this city.
+                </p>
+                <p>
+                  <h3>if you plan to explore London,</h3> 
+                  <h3>spring and autumn are undoubtedly the best time!</h3>
+                </p>
+            </div>
+    
+            <!-- barchart -->
+            <div id="barchartContainer">
+              <p style="text-align: center; margin-bottom: 5px;">Monthly Passenger Average Trends of Bus and Underground(2010-2023)</p>
+              
+            </div>
+    
+            <!-- picture -->
+            <div id="imageContainer">
+                <img src="assets/img/The-Creative-AdventurerLondon-Public-Transport.jpg" alt="Visualization Placeholder" id="trendImage">
+            </div>
+        </div>
+    
+        <!-- interactive barchart -->
+        <script>
+    
+    var svgbarchart = dimple.newSvg("#barchartContainer", "100%", "100%");
+
+    d3.tsv("data/monthly_avg_passengers.tsv").then(function(data) {
+        console.log("Raw Data Loaded:", data.length, "rows");
+
+        var processedData = [];
+        data.forEach(d => {
+            d.Month = d.Month.trim();
+            if (d["Bus journeys"]) {
+                processedData.push({ Month: d.Month, "Transport Mode": "Bus journeys", Passengers: parseFloat(d["Bus journeys"]) });
+            }
+            if (d["Underground journeys"]) {
+                processedData.push({ Month: d.Month, "Transport Mode": "Underground journeys", Passengers: parseFloat(d["Underground journeys"]) });
+            }
+        });
+
+        console.log("Cleaned Data:", processedData);
+
+        let nanValues = processedData.filter(d => isNaN(d.Passengers));
+        if (nanValues.length > 0) {
+            console.error("Found NaN values in Passengers:", nanValues);
+            return; 
+        }
+
+        var barchart = new dimple.chart(svgbarchart, processedData);
+        barchart.setBounds("10%","10%","80%","80%");
+
+        var x = barchart.addCategoryAxis("x", "Month");
+        x.addOrderRule([
+            "January", "February", "March", "April", "May", "June", 
+            "July", "August", "September", "October", "November", "December"
+        ]);
+
+        var y = barchart.addMeasureAxis("y", "Passengers");
+        y.title = "Avg Monthly Passengers (Millions)";
+
+        var s = barchart.addSeries("Transport Mode", dimple.plot.bar);
+
+var barColorScale = {
+    "Tram journeys": "#f3dac4",
+    "DLR journeys": "#9c4a4a",
+    "Overground journeys": "#f3dac4",
+    "Underground journeys": "#e37c58",
+                  "Bus journeys": "#f3dac4"
+};
+
+
+Object.keys(barColorScale).forEach(mode => {
+    barchart.assignColor(mode, barColorScale[mode]);
+});
+
+        barchart.addLegend("20%","5%","80%","80%", "right");
+
+        try {
+            barchart.draw();
+            console.log("Chart drawn successfully");
+        } catch (e) {
+            console.error("Error drawing chart:", e);
+        }
+
+    }).catch(function(error) {
+        console.error("Failed to load TSV file:", error);
+    });
+
+
+        </script>
+    </section>
+  
+    <!-- ======= Underground travel ======= -->
+    <section id="underground" class="underground">
+      <div class="container">
+        <!-- title -->
+        <div class="section-title">
+            <span>Underground Travel Analysis</span>
+            <h2>Underground Travel Patterns in London</h2>
+        </div>
+
+        <div class="underground-layout">
+            <!-- Mapbox -->
+            <div id="undergroundMapContainer">
+              <iframe src="map-underground.html" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
+            </div>
+
+            <!-- text -->
+            <div id="undergroundInfoContainer">
+                <h3>London Underground Weekend Passenger Flow</h3>
+                <h3>Where is the busiest?</h3>
+                <p>
+                  The interactive map shows the number of passengers entering and leaving the underground Stations on Sunday in April 2024. 
+                  We can clearly see that the city center is the most crowded area, 
+                  especially the large interchange stations closed to the train stations and attractions, which show amazing passenger flow.</p>
+                <p>
+                  Does this mean that London on weekends attracts travelers from all over the country?
+                  Or do London residents travel to other cities?
+                </p>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <section id="underground-analysis">
+      <div class="container">
+          <!-- title -->
+          <div class="section-title">
+              <span>Underground Travel Analysis</span>
+              <h2>Detailed Underground Station Analysis</h2>
+          </div>
+
+          <div class="underground-analysis-layout">
+
+              <div class="underground-analysis-column left">
+
+                <div class="chart-title">
+              </div>
+
+                  <div id="bubbleChartContainer" class="underground-analysis-section">
+                    <p style="text-align: center; margin-bottom: 5px;">London Underground Stations Passengers Rank (Click to find details)</p>
+              
+
+                  </div>
+                  <div id="bubbleChartText" class="underground-analysis-section">
+                   
+                      <p>
+                        2024.04.07:(1st)Tottenham Coutrt Road;  (2nd)Bond Street;  (3rd)Stratford;  (4th)Oxford Circus</p>
+                  </div>              
+                </div>
+      
+              <div class="underground-analysis-column right">
+    
+                <!-- heatmap -->
+                <div class="heatmap-container">
+                    <div id="staticHeatmapContainer" class="underground-analysis-section">
+                      <p style="text-align: center; margin-bottom: 5px;">London Underground Operations Performance(%)</p>
+              
+                        <img src="assets/img/kilo_service_heatmap.jpg" alt="heatmap">
+                        <p>
+                        Golden Age (2016-2019): Almost all lines performed above 95%, with extremely high reliability.
+                        <p>
+                        Epidemic Impact (2020-2022): Service quality has dropped significantly, even falling to 72.4%.   
+                        <p>
+                        Gradual Recovery (2023-): The operating performance of most subway lines has recovered to 90%, 
+                        but Piccadilly and Jubilee lines may still perform poorly.
+                        <p>
+                          </p>
+                    </div>
+                </div>             
+              </div>
+      </div>
+      <h3>Want to avoid delays?
+        <p> 
+        It is recommended to take high-scoring lines!Waterloo & City Line!</h3>
+  
+  </section>
+  
+  
+  <script>
+      var bubbleSvg = dimple.newSvg("#bubbleChartContainer", "100%", "100&");
+
+      d3.tsv("data/underground_stations.tsv").then(function (data) {
+          console.log("Data Loaded:", data.length, "rows");
+
+          data.forEach(d => {
+              d["Sunday Entry Exit"] = +d["Sunday Entry Exit"] || 0;
+          });
+
+          var bubbleChart = new dimple.chart(bubbleSvg, data);
+          bubbleChart.setBounds("10%", "10%", "80%", "80%");
+
+          var xBubble = bubbleChart.addMeasureAxis("x", "Sunday Entry Exit");
+          xBubble.title = "Sunday Entry Exit passenger's number"; 
+
+          var yBubble = bubbleChart.addMeasureAxis("y", "Sunday Entry Exit");
+          yBubble.title = "Sunday Entry Exit passenger's number";
+
+          bubbleChart.addMeasureAxis("z", "Sunday Entry Exit");
+
+          var sBubble = bubbleChart.addSeries(["name"], dimple.plot.bubble);
+
+          sBubble.getTooltipText = function (e) {
+              return [
+                  "Name: " + e.aggField[0],
+                  "Sunday Entry Exit: " + e.y.toFixed(0)
+              ];
+          };
+
+          bubbleChart.draw();
+
+          window.addEventListener("resize", function () {
+            bubbleChart.draw(0, true);
+        });
+  
+      }).catch(function (error) {
+          console.error("Failed to load CSV file:", error);
+      });
+  
+  </script>
+ 
+
+
+    <!-- ======= Author ======= -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>
