@@ -15,8 +15,8 @@
         "type": "attraction",
         "Region": "London",
         "Tags": "Modern landmarks",
-        "BestSeason": "autumn, winter",
-        "Popular": 2,
+        "BestSeason": "spring, autumn, winter",
+        "Popular": 1,
         "Charge": "No"
       }
     },
@@ -53,7 +53,7 @@
         "type": "amenity",
         "Region": "London",
         "Tags": "Historical landmarks, Modern landmarks",
-        "BestSeason": "spring, summer",
+        "BestSeason": "spring, summer, autumn",
         "Popular": 3,
         "Charge": "Yes"
       }
@@ -72,8 +72,8 @@
         "type": "amenity",
         "Region": "London",
         "Tags": "Musical and theatre",
-        "BestSeason": "autumn, winter",
-        "Popular": 2,
+        "BestSeason": "spring, autumn, winter",
+        "Popular": 3,
         "Charge": "Yes"
       }
     },
@@ -110,8 +110,8 @@
         "type": "amenity",
         "Region": "London",
         "Tags": "Musical and theatre",
-        "BestSeason": "autumn, winter",
-        "Popular": 2,
+        "BestSeason": "spring, autumn, winter",
+        "Popular": 3,
         "Charge": "Yes"
       }
     },
@@ -129,8 +129,8 @@
         "type": "amenity",
         "Region": "London",
         "Tags": "Musical and theatre",
-        "BestSeason": "autumn, winter",
-        "Popular": 2,
+        "BestSeason": "spring, autumn, winter",
+        "Popular": 3,
         "Charge": "Yes"
       }
     },
@@ -148,8 +148,8 @@
         "type": "amenity",
         "Region": "London",
         "Tags": "Musical and theatre",
-        "BestSeason": "autumn, winter",
-        "Popular": 2,
+        "BestSeason": "spring, autumn, winter",
+        "Popular": 3,
         "Charge": "Yes"
       }
     },
@@ -167,7 +167,7 @@
         "type": "amenity",
         "Region": "London",
         "Tags": "Musical and theatre",
-        "BestSeason": "autumn, winter",
+        "BestSeason": "spring, autumn, winter",
         "Popular": 3,
         "Charge": "Yes"
       }
@@ -187,7 +187,7 @@
         "Region": "London",
         "Tags": "Historical landmarks, Museums, Royal family and palaces",
         "BestSeason": "spring, autumn",
-        "Popular": 2,
+        "Popular": 1,
         "Charge": "Yes"
       }
     },
@@ -205,8 +205,8 @@
         "type": "amenity",
         "Region": "London",
         "Tags": "Musical and theatre",
-        "BestSeason": "autumn, winter",
-        "Popular": 2,
+        "BestSeason": "spring, autumn, winter",
+        "Popular": 1,
         "Charge": "Yes"
       }
     },
@@ -224,8 +224,8 @@
         "type": "amenity",
         "Region": "London",
         "Tags": "Modern landmarks, Musical and theatre",
-        "BestSeason": "winter, autumn",
-        "Popular": 2,
+        "BestSeason": "spring, autumn, winter",
+        "Popular": 3,
         "Charge": "Yes"
       }
     },
@@ -243,8 +243,8 @@
         "type": "attraction",
         "Region": "London",
         "Tags": "Historical landmarks, Museums",
-        "BestSeason": "winter, spring",
-        "Popular": 2,
+        "BestSeason": "spring, autumn, winter",
+        "Popular": 3,
         "Charge": "No"
       }
     },
@@ -263,7 +263,7 @@
         "Region": "London",
         "Tags": "Historical landmarks, Royal family and palaces",
         "BestSeason": "spring, autumn",
-        "Popular": 2,
+        "Popular": 1,
         "Charge": "Yes"
       }
     },
@@ -281,8 +281,8 @@
         "type": "amenity",
         "Region": "London",
         "Tags": "Art galleries, Musical and theatre, Modern landmarks",
-        "BestSeason": "autumn, winter",
-        "Popular": 2,
+        "BestSeason": "spring, autumn, winter",
+        "Popular": 1,
         "Charge": "No"
       }
     },
@@ -300,7 +300,7 @@
         "type": "historic",
         "Region": "London",
         "Tags": "Historical landmarks, Royal family and palaces",
-        "BestSeason": "spring, summer",
+        "BestSeason": "spring, summer, autumn",
         "Popular": 3,
         "Charge": "No"
       }
@@ -319,8 +319,8 @@
         "type": "amenity",
         "Region": "London",
         "Tags": "Musical and theatre",
-        "BestSeason": "autumn, winter",
-        "Popular": 2,
+        "BestSeason": "spring, autumn, winter",
+        "Popular": 1,
         "Charge": "Yes"
       }
     },
@@ -338,7 +338,7 @@
         "type": "amenity",
         "Region": "London",
         "Tags": "Museums, Historical landmarks",
-        "BestSeason": "winter, spring",
+        "BestSeason": "spring, autumn, winter",
         "Popular": 3,
         "Charge": "No"
       }
@@ -357,7 +357,7 @@
         "type": "museum",
         "Region": "London",
         "Tags": "Museums, Historical landmarks",
-        "BestSeason": "winter, spring",
+        "BestSeason": "spring, autumn, winter",
         "Popular": 3,
         "Charge": "No"
       }
@@ -414,8 +414,8 @@
         "type": "attraction",
         "Region": "London",
         "Tags": "Shopping districts, Historical landmarks",
-        "BestSeason": "winter",
-        "Popular": 2,
+        "BestSeason": "spring, autumn, winter",
+        "Popular": 1,
         "Charge": "No"
       }
     },
@@ -433,7 +433,7 @@
         "type": "amenity",
         "Region": "London",
         "Tags": "Musical and theatre",
-        "BestSeason": "autumn, winter",
+        "BestSeason": "spring, autumn, winter",
         "Popular": 3,
         "Charge": "Yes"
       }
@@ -452,7 +452,7 @@
         "type": "amenity",
         "Region": "London",
         "Tags": "Shopping districts, Modern landmarks",
-        "BestSeason": "spring, summer",
+        "BestSeason": "spring, summer, autumn",
         "Popular": 3,
         "Charge": "No"
       }
@@ -472,7 +472,7 @@
         "Region": "London",
         "Tags": "Museums, Historical landmarks",
         "BestSeason": "spring, autumn",
-        "Popular": 2,
+        "Popular": 1,
         "Charge": "Yes"
       }
     },
@@ -490,8 +490,8 @@
         "type": "park",
         "Region": "London",
         "Tags": "Park and gardens, Historical landmarks",
-        "BestSeason": "spring, summer",
-        "Popular": 2,
+        "BestSeason": "spring, summer, autumn",
+        "Popular": 3,
         "Charge": "Yes"
       }
     },
@@ -510,7 +510,7 @@
         "Region": "London",
         "Tags": "Royal family and palaces, Historical landmarks",
         "BestSeason": "summer",
-        "Popular": 2,
+        "Popular": 3,
         "Charge": "Yes"
       }
     },
@@ -528,7 +528,7 @@
         "type": "attraction",
         "Region": "London",
         "Tags": "Shopping districts, Historical landmarks",
-        "BestSeason": "spring, summer",
+        "BestSeason": "spring, summer, autumn",
         "Popular": 3,
         "Charge": "No"
       }
@@ -547,8 +547,8 @@
         "type": "amenity",
         "Region": "London",
         "Tags": "Musical and theatre",
-        "BestSeason": "autumn, winter",
-        "Popular": 2,
+        "BestSeason": "spring, autumn, winter",
+        "Popular": 1,
         "Charge": "Yes"
       }
     },
@@ -586,7 +586,7 @@
         "Region": "London",
         "Tags": "Museums, Modern landmarks",
         "BestSeason": "spring, autumn",
-        "Popular": 2,
+        "Popular": 1,
         "Charge": "No"
       }
     },
@@ -604,8 +604,8 @@
         "type": "amenity",
         "Region": "London",
         "Tags": "Musical and theatre",
-        "BestSeason": "autumn, winter",
-        "Popular": 2,
+        "BestSeason": "spring, autumn, winter",
+        "Popular": 3,
         "Charge": "Yes"
       }
     },
@@ -623,8 +623,8 @@
         "type": "amenity",
         "Region": "London",
         "Tags": "Musical and theatre",
-        "BestSeason": "autumn, winter",
-        "Popular": 2,
+        "BestSeason": "spring, autumn, winter",
+        "Popular": 1,
         "Charge": "Yes"
       }
     },
@@ -642,7 +642,7 @@
         "type": "amenity",
         "Region": "London",
         "Tags": "Musical and theatre",
-        "BestSeason": "autumn, winter",
+        "BestSeason": "spring, autumn, winter",
         "Popular": 1,
         "Charge": "Yes"
       }
@@ -661,8 +661,8 @@
         "type": "gallery",
         "Region": "London",
         "Tags": "Art galleries, Historical landmarks",
-        "BestSeason": "spring,summer,autumn,winter",
-        "Popular": 2,
+        "BestSeason": "spring, summer, autumn, winter",
+        "Popular": 3,
         "Charge": "Yes"
       }
     },
@@ -699,7 +699,7 @@
         "type": "museum",
         "Region": "London",
         "Tags": "Museums, Park and gardens, Historical landmarks",
-        "BestSeason": "spring, summer",
+        "BestSeason": "spring, summer, autumn",
         "Popular": 1,
         "Charge": "Yes"
       }
@@ -718,8 +718,8 @@
         "type": "amenity",
         "Region": "London",
         "Tags": "Musical and theatre",
-        "BestSeason": "autumn, winter",
-        "Popular": 2,
+        "BestSeason": "spring, autumn, winter",
+        "Popular": 3,
         "Charge": "Yes"
       }
     },
@@ -737,8 +737,8 @@
         "type": "amenity",
         "Region": "London",
         "Tags": "Musical and theatre",
-        "BestSeason": "autumn, winter",
-        "Popular": 2,
+        "BestSeason": "spring, autumn, winter",
+        "Popular": 1,
         "Charge": "Yes"
       }
     },
@@ -756,8 +756,8 @@
         "type": "historic",
         "Region": "London",
         "Tags": "Museums, Historical landmarks",
-        "BestSeason": "spring, summer",
-        "Popular": 2,
+        "BestSeason": "spring, summer, autumn",
+        "Popular": 1,
         "Charge": "Yes"
       }
     },
@@ -776,7 +776,7 @@
         "Region": "London",
         "Tags": "Historical landmarks",
         "BestSeason": "spring, autumn",
-        "Popular": 2,
+        "Popular": 1,
         "Charge": "No"
       }
     },
@@ -794,8 +794,8 @@
         "type": "gallery",
         "Region": "London",
         "Tags": "Art galleries, Historical landmarks",
-        "BestSeason": "spring,summer,autumn,winter",
-        "Popular": 2,
+        "BestSeason": "spring, summer, autumn, winter",
+        "Popular": 1,
         "Charge": "No"
       }
     },
@@ -832,7 +832,7 @@
         "type": "amenity",
         "Region": "London",
         "Tags": "Musical and theatre",
-        "BestSeason": "autumn, winter",
+        "BestSeason": "spring, autumn, winter",
         "Popular": 1,
         "Charge": "Yes"
       }
@@ -851,7 +851,7 @@
         "type": "attraction",
         "Region": "London",
         "Tags": "Shopping districts, Modern landmarks",
-        "BestSeason": "winter, spring",
+        "BestSeason": "spring, autumn, winter",
         "Popular": 3,
         "Charge": "No"
       }
@@ -871,7 +871,7 @@
         "Region": "London",
         "Tags": "Historical landmarks",
         "BestSeason": "spring, autumn",
-        "Popular": 2,
+        "Popular": 1,
         "Charge": "Yes"
       }
     },
@@ -889,7 +889,7 @@
         "type": "amenity",
         "Region": "London",
         "Tags": "Musical and theatre",
-        "BestSeason": "autumn, winter",
+        "BestSeason": "spring, autumn, winter",
         "Popular": 3,
         "Charge": "Yes"
       }
@@ -909,7 +909,7 @@
         "Region": "London",
         "Tags": "Historical landmarks, Royal family and palaces",
         "BestSeason": "summer",
-        "Popular": 2,
+        "Popular": 3,
         "Charge": "No"
       }
     },
@@ -927,7 +927,7 @@
         "type": "park",
         "Region": "London",
         "Tags": "Park and gardens, Historical landmarks",
-        "BestSeason": "spring, summer",
+        "BestSeason": "spring, summer, autumn",
         "Popular": 3,
         "Charge": "No"
       }
@@ -946,7 +946,7 @@
         "type": "museum",
         "Region": "London",
         "Tags": "Museums, Historical landmarks",
-        "BestSeason": "winter, spring",
+        "BestSeason": "spring, autumn, winter",
         "Popular": 3,
         "Charge": "Yes"
       }
@@ -966,7 +966,7 @@
         "Region": "London",
         "Tags": "Museums, Historical landmarks",
         "BestSeason": "spring, autumn",
-        "Popular": 2,
+        "Popular": 1,
         "Charge": "Yes"
       }
     },
@@ -984,7 +984,7 @@
         "type": "museum",
         "Region": "London",
         "Tags": "Museums, Historical landmarks",
-        "BestSeason": "winter, spring",
+        "BestSeason": "spring, autumn, winter",
         "Popular": 3,
         "Charge": "No"
       }
@@ -1041,8 +1041,8 @@
         "type": "historic",
         "Region": "London",
         "Tags": "Historical landmarks, Art galleries",
-        "BestSeason": "spring, summer",
-        "Popular": 2,
+        "BestSeason": "spring, summer, autumn",
+        "Popular": 3,
         "Charge": "No"
       }
     },
@@ -1060,7 +1060,7 @@
         "type": "amenity",
         "Region": "London",
         "Tags": "Musical and theatre",
-        "BestSeason": "autumn, winter",
+        "BestSeason": "spring, autumn, winter",
         "Popular": 1,
         "Charge": "Yes"
       }
@@ -1080,7 +1080,7 @@
         "Region": "London",
         "Tags": "Museums, Art galleries, Historical landmarks",
         "BestSeason": "spring, autumn",
-        "Popular": 2,
+        "Popular": 1,
         "Charge": "Yes"
       }
     },
@@ -1098,8 +1098,8 @@
         "type": "other",
         "Region": "London",
         "Tags": "Museums, Modern landmarks",
-        "BestSeason": "spring, summer",
-        "Popular": 2,
+        "BestSeason": "spring, summer, autumn",
+        "Popular": 3,
         "Charge": "Yes"
       }
     },
@@ -1117,8 +1117,8 @@
         "type": "attraction",
         "Region": "London",
         "Tags": "Museums, Modern landmarks",
-        "BestSeason": "winter, spring",
-        "Popular": 2,
+        "BestSeason": "spring, autumn, winter",
+        "Popular": 1,
         "Charge": "Yes"
       }
     },
@@ -1136,7 +1136,7 @@
         "type": "museum",
         "Region": "London",
         "Tags": "Museums",
-        "BestSeason": "spring, summer",
+        "BestSeason": "spring, summer, autumn",
         "Popular": 1,
         "Charge": "Yes"
       }
@@ -1155,7 +1155,7 @@
         "type": "amenity",
         "Region": "London",
         "Tags": "Musical and theatre",
-        "BestSeason": "autumn, winter",
+        "BestSeason": "spring, autumn, winter",
         "Popular": 3,
         "Charge": "Yes"
       }
@@ -1174,7 +1174,7 @@
         "type": "attraction",
         "Region": "London",
         "Tags": "Modern landmarks",
-        "BestSeason": "spring, summer",
+        "BestSeason": "spring, summer, autumn",
         "Popular": 3,
         "Charge": "Yes"
       }
@@ -1193,7 +1193,7 @@
         "type": "museum",
         "Region": "London",
         "Tags": "Museums, Historical landmarks",
-        "BestSeason": "autumn, winter",
+        "BestSeason": "spring, autumn, winter",
         "Popular": 1,
         "Charge": "No"
       }
@@ -1213,7 +1213,7 @@
         "Region": "London",
         "Tags": "Museums, Historical landmarks",
         "BestSeason": "spring, autumn",
-        "Popular": 2,
+        "Popular": 3,
         "Charge": "No"
       }
     },
@@ -1231,7 +1231,7 @@
         "type": "amenity",
         "Region": "London",
         "Tags": "Musical and theatre",
-        "BestSeason": "autumn, winter",
+        "BestSeason": "spring, autumn, winter",
         "Popular": 3,
         "Charge": "Yes"
       }
@@ -1250,7 +1250,7 @@
         "type": "museum",
         "Region": "London",
         "Tags": "Museums, Historical landmarks",
-        "BestSeason": "winter, spring",
+        "BestSeason": "spring, autumn, winter",
         "Popular": 3,
         "Charge": "Yes"
       }
@@ -1269,7 +1269,7 @@
         "type": "other",
         "Region": "London",
         "Tags": "Museums, Park and gardens, Historical landmarks",
-        "BestSeason": "spring, summer",
+        "BestSeason": "spring, summer, autumn",
         "Popular": 3,
         "Charge": "Yes"
       }
@@ -1288,7 +1288,7 @@
         "type": "amenity",
         "Region": "London",
         "Tags": "Musical and theatre",
-        "BestSeason": "autumn, winter",
+        "BestSeason": "spring, autumn, winter",
         "Popular": 3,
         "Charge": "Yes"
       }
@@ -1307,8 +1307,8 @@
         "type": "amenity",
         "Region": "London",
         "Tags": "Musical and theatre",
-        "BestSeason": "autumn, winter",
-        "Popular": 2,
+        "BestSeason": "spring, autumn, winter",
+        "Popular": 3,
         "Charge": "Yes"
       }
     },
@@ -1326,7 +1326,7 @@
         "type": "museum",
         "Region": "London",
         "Tags": "Museums, Modern landmarks",
-        "BestSeason": "summer, winter",
+        "BestSeason": "spring, summer, autumn, winter",
         "Popular": 3,
         "Charge": "Yes"
       }
@@ -1345,8 +1345,8 @@
         "type": "historic",
         "Region": "London",
         "Tags": "Historical landmarks, Modern landmarks",
-        "BestSeason": "autumn, winter",
-        "Popular": 2,
+        "BestSeason": "spring, autumn, winter",
+        "Popular": 1,
         "Charge": "No"
       }
     },
@@ -1364,8 +1364,8 @@
         "type": "historic",
         "Region": "London",
         "Tags": "Historical landmarks",
-        "BestSeason": "spring, summer",
-        "Popular": 2,
+        "BestSeason": "spring, summer, autumn",
+        "Popular": 1,
         "Charge": "Yes"
       }
     },
@@ -1402,8 +1402,8 @@
         "type": "museum",
         "Region": "London",
         "Tags": "Museums, Historical landmarks",
-        "BestSeason": "winter, spring",
-        "Popular": 2,
+        "BestSeason": "spring, autumn, winter",
+        "Popular": 3,
         "Charge": "No"
       }
     },
@@ -1421,7 +1421,7 @@
         "type": "gallery",
         "Region": "London",
         "Tags": "Art galleries, Museums, Historical landmarks",
-        "BestSeason": "spring,summer,autumn,winter",
+        "BestSeason": "spring, summer, autumn, winter",
         "Popular": 3,
         "Charge": "No"
       }
@@ -1440,7 +1440,7 @@
         "type": "gallery",
         "Region": "London",
         "Tags": "Art galleries, Museums",
-        "BestSeason": "spring,summer,autumn,winter",
+        "BestSeason": "spring, summer, autumn, winter",
         "Popular": 3,
         "Charge": "No"
       }
@@ -1459,7 +1459,7 @@
         "type": "amenity",
         "Region": "London",
         "Tags": "Musical and theatre",
-        "BestSeason": "autumn, winter",
+        "BestSeason": "spring, autumn, winter",
         "Popular": 3,
         "Charge": "Yes"
       }
@@ -1478,7 +1478,7 @@
         "type": "museum",
         "Region": "London",
         "Tags": "Museums, Historical landmarks",
-        "BestSeason": "winter, spring",
+        "BestSeason": "spring, autumn, winter",
         "Popular": 3,
         "Charge": "No"
       }
@@ -1497,8 +1497,8 @@
         "type": "amenity",
         "Region": "London",
         "Tags": "Musical and theatre",
-        "BestSeason": "autumn, winter",
-        "Popular": 2,
+        "BestSeason": "spring, autumn, winter",
+        "Popular": 3,
         "Charge": "Yes"
       }
     },
@@ -1516,8 +1516,8 @@
         "type": "amenity",
         "Region": "London",
         "Tags": "Musical and theatre",
-        "BestSeason": "autumn, winter",
-        "Popular": 2,
+        "BestSeason": "spring, autumn, winter",
+        "Popular": 3,
         "Charge": "Yes"
       }
     },
@@ -1535,7 +1535,7 @@
         "type": "amenity",
         "Region": "London",
         "Tags": "Musical and theatre",
-        "BestSeason": "autumn, winter",
+        "BestSeason": "spring, autumn, winter",
         "Popular": 3,
         "Charge": "Yes"
       }
@@ -1592,8 +1592,8 @@
         "type": "amenity",
         "Region": "London",
         "Tags": "Musical and theatre",
-        "BestSeason": "autumn, winter",
-        "Popular": 2,
+        "BestSeason": "spring, autumn, winter",
+        "Popular": 1,
         "Charge": "Yes"
       }
     },
@@ -1611,8 +1611,8 @@
         "type": "amenity",
         "Region": "London",
         "Tags": "Musical and theatre",
-        "BestSeason": "autumn, winter",
-        "Popular": 2,
+        "BestSeason": "spring, autumn, winter",
+        "Popular": 1,
         "Charge": "Yes"
       }
     },
@@ -1630,8 +1630,8 @@
         "type": "amenity",
         "Region": "London",
         "Tags": "Musical and theatre",
-        "BestSeason": "autumn, winter",
-        "Popular": 2,
+        "BestSeason": "spring, autumn, winter",
+        "Popular": 3,
         "Charge": "Yes"
       }
     },
@@ -1649,8 +1649,8 @@
         "type": "park",
         "Region": "London",
         "Tags": "Park and gardens",
-        "BestSeason": "spring, summer",
-        "Popular": 2,
+        "BestSeason": "spring, summer, autumn",
+        "Popular": 1,
         "Charge": "No"
       }
     },
@@ -1668,7 +1668,7 @@
         "type": "amenity",
         "Region": "London",
         "Tags": "Musical and theatre",
-        "BestSeason": "autumn, winter",
+        "BestSeason": "spring, autumn, winter",
         "Popular": 3,
         "Charge": "Yes"
       }
@@ -1687,8 +1687,8 @@
         "type": "amenity",
         "Region": "London",
         "Tags": "Musical and theatre, Modern landmarks",
-        "BestSeason": "summer, autumn",
-        "Popular": 2,
+        "BestSeason": "spring, summer, autumn",
+        "Popular": 3,
         "Charge": "Yes"
       }
     },
@@ -1707,7 +1707,7 @@
         "Region": "London",
         "Tags": "Art galleries, Museums",
         "BestSeason": "spring, autumn",
-        "Popular": 2,
+        "Popular": 3,
         "Charge": "No"
       }
     },
@@ -1744,7 +1744,7 @@
         "type": "amenity",
         "Region": "London",
         "Tags": "Musical and theatre, Historical landmarks",
-        "BestSeason": "spring, winter",
+        "BestSeason": "spring, autumn, winter",
         "Popular": 3,
         "Charge": "Yes"
       }
@@ -1763,7 +1763,7 @@
         "type": "amenity",
         "Region": "London",
         "Tags": "Musical and theatre",
-        "BestSeason": "autumn, winter",
+        "BestSeason": "spring, autumn, winter",
         "Popular": 1,
         "Charge": "Yes"
       }
@@ -1783,7 +1783,7 @@
         "Region": "London",
         "Tags": "Historical landmarks",
         "BestSeason": "spring, autumn",
-        "Popular": 2,
+        "Popular": 1,
         "Charge": "No"
       }
     },
@@ -1839,8 +1839,8 @@
         "type": "amenity",
         "Region": "London",
         "Tags": "Musical and theatre",
-        "BestSeason": "autumn, winter",
-        "Popular": 2,
+        "BestSeason": "spring, autumn, winter",
+        "Popular": 1,
         "Charge": "Yes"
       }
     },
@@ -1858,7 +1858,7 @@
         "type": "museum",
         "Region": "London",
         "Tags": "Museums, Modern landmarks",
-        "BestSeason": "winter, spring",
+        "BestSeason": "spring, autumn, winter",
         "Popular": 3,
         "Charge": "No"
       }
@@ -1877,7 +1877,7 @@
         "type": "amenity",
         "Region": "London",
         "Tags": "Musical and theatre, Historical landmarks",
-        "BestSeason": "spring, summer",
+        "BestSeason": "spring, summer, autumn",
         "Popular": 3,
         "Charge": "Yes"
       }
@@ -1896,8 +1896,8 @@
         "type": "historic",
         "Region": "London",
         "Tags": "Historical landmarks, Art galleries, Modern landmarks",
-        "BestSeason": "spring, summer",
-        "Popular": 2,
+        "BestSeason": "spring, summer, autumn",
+        "Popular": 3,
         "Charge": "No"
       }
     },
@@ -1915,7 +1915,7 @@
         "type": "amenity",
         "Region": "London",
         "Tags": "Musical and theatre",
-        "BestSeason": "autumn, winter",
+        "BestSeason": "spring, autumn, winter",
         "Popular": 1,
         "Charge": "Yes"
       }
@@ -1953,7 +1953,7 @@
         "type": "park",
         "Region": "London",
         "Tags": "Park and gardens, Modern landmarks",
-        "BestSeason": "spring, summer",
+        "BestSeason": "spring, summer, autumn",
         "Popular": 1,
         "Charge": "No"
       }
@@ -1991,7 +1991,7 @@
         "type": "historic",
         "Region": "London",
         "Tags": "Historical landmarks, Church spirtual",
-        "BestSeason": "spring, summer",
+        "BestSeason": "spring, summer, autumn",
         "Popular": 3,
         "Charge": "Yes"
       }
@@ -2010,7 +2010,7 @@
         "type": "park",
         "Region": "London",
         "Tags": "Park and gardens, Royal family and palaces, Historical landmarks",
-        "BestSeason": "spring, summer",
+        "BestSeason": "spring, summer, autumn",
         "Popular": 3,
         "Charge": "No"
       }
@@ -2048,7 +2048,7 @@
         "type": "gallery",
         "Region": "London",
         "Tags": "Art galleries, Museums",
-        "BestSeason": "spring,summer,autumn,winter",
+        "BestSeason": "spring, summer, autumn, winter",
         "Popular": 3,
         "Charge": "No"
       }
@@ -2086,8 +2086,8 @@
         "type": "gallery",
         "Region": "London",
         "Tags": "Art galleries, Modern landmarks, Musical and theatre",
-        "BestSeason": "spring,summer,autumn,winter",
-        "Popular": 2,
+        "BestSeason": "spring, summer, autumn, winter",
+        "Popular": 1,
         "Charge": "No"
       }
     },
@@ -2124,7 +2124,7 @@
         "type": "museum",
         "Region": "London",
         "Tags": "Museums, Historical landmarks",
-        "BestSeason": "winter, spring",
+        "BestSeason": "spring, autumn, winter",
         "Popular": 1,
         "Charge": "Yes"
       }
@@ -2143,7 +2143,7 @@
         "type": "attraction",
         "Region": "London",
         "Tags": "Museums, Modern landmarks",
-        "BestSeason": "winter, spring",
+        "BestSeason": "spring, autumn, winter",
         "Popular": 3,
         "Charge": "Yes"
       }
@@ -2162,8 +2162,8 @@
         "type": "historic",
         "Region": "London",
         "Tags": "Historical landmarks",
-        "BestSeason": "spring, summer",
-        "Popular": 2,
+        "BestSeason": "spring, summer, autumn",
+        "Popular": 1,
         "Charge": "Yes"
       }
     },
@@ -2181,8 +2181,8 @@
         "type": "amenity",
         "Region": "London",
         "Tags": "Musical and theatre",
-        "BestSeason": "autumn, winter",
-        "Popular": 2,
+        "BestSeason": "spring, autumn, winter",
+        "Popular": 3,
         "Charge": "No"
       }
     },
@@ -2200,7 +2200,7 @@
         "type": "park",
         "Region": "London",
         "Tags": "Park and gardens, Historical landmarks",
-        "BestSeason": "spring, summer",
+        "BestSeason": "spring, summer, autumn",
         "Popular": 3,
         "Charge": "No"
       }
@@ -2219,8 +2219,8 @@
         "type": "attraction",
         "Region": "London",
         "Tags": "Historical landmarks, Royal family and palaces",
-        "BestSeason": "spring",
-        "Popular": 2,
+        "BestSeason": "spring, autumn",
+        "Popular": 1,
         "Charge": "Yes"
       }
     },
@@ -2239,7 +2239,7 @@
         "Region": "London",
         "Tags": "Historical landmarks, Royal family and palaces",
         "BestSeason": "spring, autumn",
-        "Popular": 2,
+        "Popular": 1,
         "Charge": "Yes"
       }
     },
@@ -2257,7 +2257,7 @@
         "type": "attraction",
         "Region": "London",
         "Tags": "Modern landmarks",
-        "BestSeason": "summer, winter",
+        "BestSeason": "spring, summer, autumn, winter",
         "Popular": 3,
         "Charge": "Yes"
       }
@@ -2277,7 +2277,7 @@
         "Region": "London",
         "Tags": "Museums, Historical landmarks",
         "BestSeason": "spring, autumn",
-        "Popular": 2,
+        "Popular": 3,
         "Charge": "Yes"
       }
     },
@@ -2295,7 +2295,7 @@
         "type": "amenity",
         "Region": "London",
         "Tags": "Musical and theatre",
-        "BestSeason": "autumn, winter",
+        "BestSeason": "spring, autumn, winter",
         "Popular": 1,
         "Charge": "No"
       }
@@ -2314,8 +2314,8 @@
         "type": "gallery",
         "Region": "London",
         "Tags": "Art galleries, Museums, Historical landmarks",
-        "BestSeason": "spring,summer,autumn,winter",
-        "Popular": 2,
+        "BestSeason": "spring, summer, autumn, winter",
+        "Popular": 1,
         "Charge": "No"
       }
     },
@@ -2333,7 +2333,7 @@
         "type": "amenity",
         "Region": "London",
         "Tags": "Musical and theatre",
-        "BestSeason": "autumn, winter",
+        "BestSeason": "spring, autumn, winter",
         "Popular": 1,
         "Charge": "No"
       }
@@ -2352,8 +2352,8 @@
         "type": "amenity",
         "Region": "London",
         "Tags": "Musical and theatre",
-        "BestSeason": "autumn, winter",
-        "Popular": 2,
+        "BestSeason": "spring, autumn, winter",
+        "Popular": 3,
         "Charge": "No"
       }
     },
@@ -2371,7 +2371,7 @@
         "type": "amenity",
         "Region": "London",
         "Tags": "Musical and theatre",
-        "BestSeason": "autumn, winter",
+        "BestSeason": "spring, autumn, winter",
         "Popular": 3,
         "Charge": "No"
       }
@@ -2390,7 +2390,7 @@
         "type": "historic",
         "Region": "London",
         "Tags": "Historical landmarks, Modern landmarks",
-        "BestSeason": "summer, autumn",
+        "BestSeason": "spring, summer, autumn",
         "Popular": 3,
         "Charge": "Yes"
       }
@@ -2428,7 +2428,7 @@
         "type": "attraction",
         "Region": "London",
         "Tags": "Historical landmarks, Modern landmarks",
-        "BestSeason": "summer, winter",
+        "BestSeason": "spring, summer, autumn, winter",
         "Popular": 3,
         "Charge": "No"
       }
@@ -2447,7 +2447,7 @@
         "type": "amenity",
         "Region": "London",
         "Tags": "Musical and theatre",
-        "BestSeason": "autumn, winter",
+        "BestSeason": "spring, autumn, winter",
         "Popular": 1,
         "Charge": "Yes"
       }
@@ -2485,7 +2485,7 @@
         "type": "museum",
         "Region": "London",
         "Tags": "Museums, Modern landmarks",
-        "BestSeason": "autumn, winter",
+        "BestSeason": "spring, autumn, winter",
         "Popular": 1,
         "Charge": "No"
       }
@@ -2504,7 +2504,7 @@
         "type": "amenity",
         "Region": "London",
         "Tags": "Musical and theatre",
-        "BestSeason": "autumn, winter",
+        "BestSeason": "spring, autumn, winter",
         "Popular": 3,
         "Charge": "Yes"
       }
@@ -2524,7 +2524,7 @@
         "Region": "London",
         "Tags": "Park and gardens, Historical landmarks, Royal family and palaces",
         "BestSeason": "spring, autumn",
-        "Popular": 2,
+        "Popular": 1,
         "Charge": "No"
       }
     },
@@ -2561,8 +2561,8 @@
         "type": "museum",
         "Region": "London",
         "Tags": "Museums, Modern landmarks",
-        "BestSeason": "winter, spring",
-        "Popular": 2,
+        "BestSeason": "spring, autumn, winter",
+        "Popular": 3,
         "Charge": "No"
       }
     },
@@ -2581,7 +2581,7 @@
         "Region": "London",
         "Tags": "Historical landmarks, Royal family and palaces",
         "BestSeason": "spring, autumn",
-        "Popular": 2,
+        "Popular": 3,
         "Charge": "Yes"
       }
     },
@@ -2637,8 +2637,8 @@
         "type": "amenity",
         "Region": "London",
         "Tags": "Musical and theatre",
-        "BestSeason": "autumn, winter",
-        "Popular": 2,
+        "BestSeason": "spring, autumn, winter",
+        "Popular": 3,
         "Charge": "No"
       }
     },
@@ -2656,8 +2656,8 @@
         "type": "museum",
         "Region": "London",
         "Tags": "Museums, Art galleries, Modern landmarks",
-        "BestSeason": "spring, summer",
-        "Popular": 2,
+        "BestSeason": "spring, summer, autumn",
+        "Popular": 3,
         "Charge": "No"
       }
     }

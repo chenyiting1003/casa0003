@@ -2,66 +2,27 @@ import React, { useState, useRef, useEffect } from "react";
 import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import "./App.css";
+import RouteDetailsAccordion from "./components/RouteDetailsAccordion.jsx";
+import './components/RouteDetailsAccordion.css';
+
 
 mapboxgl.accessToken = "pk.eyJ1IjoidWNmbmhiZyIsImEiOiJjbTZnZnV5cjEwMHZyMmxzYm50NDFpZnZtIn0.avm3fmwvzK3wOTLbezZjBQ"
 
 function App() {
-  const mapContainer = useRef(null);
-  const map = useRef(null);
+  const mapContainer = useRef(null);  // 地图 DOM 容器
+  const map = useRef(null);           // Mapbox 实例
+  const startMarker = useRef(null);
 
-  const [tags, setTags] = useState([]);
-  const [seasons, setSeasons] = useState([]);
-  const [popular, setPopular] = useState("");
-  const [charge, setCharge] = useState("both");
+  const [tags, setTags] = useState([]);      // 用户选中的兴趣标签
+  const [seasons, setSeasons] = useState([]); // 用户选中的季节
+  const [popular, setPopular] = useState(""); // 用户选中的知名度
+  const [charge, setCharge] = useState("both"); // 用户是否愿意付费景点
+  const [startCoord, setStartCoord] = useState(null); // 当前起点坐标
 
-  const [startCoord, setStartCoord] = useState(null); // ✅ React状态保存起点坐标
+  const [routeTrip, setRouteTrip] = useState(null);
+  const [selectedFeatures, setSelectedFeatures] = useState([]);
 
-  const useCurrentLocation = () => {
-  if (!navigator.geolocation) {
-    alert("Geolocation not supported");
-    return;
-  }
-
-  navigator.geolocation.getCurrentPosition(pos => {
-    const { longitude, latitude } = pos.coords;
-    const coord = [longitude, latitude];
-
-    setStartCoord(coord);
-
-    if (map.current) {
-      new mapboxgl.Marker({ color: "red" })
-        .setLngLat(coord)
-        .addTo(map.current);
-
-      map.current.flyTo({ center: coord, zoom: 14 });
-    }
-
-    console.log("📍 Using current location:", coord);
-  }, () => {
-    alert("Failed to get your location");
-  });
-};
-
-  const resetAll = () => {
-    setTags([]);
-    setSeasons([]);
-    setPopular("");
-    setCharge("");
-    setStartCoord(null);
-
-    if (map.current && map.current.getSource("landmarks")) {
-      map.current.getSource("landmarks").setData({
-        type: "FeatureCollection",
-        features: [],
-      });
-    }
-
-    if (map.current && map.current.getSource("route")) {
-      map.current.removeLayer("route-line");
-      map.current.removeSource("route");
-    }
-  };
-
+  
   const allTags = [
     "Modern landmarks", "Museums", "Art galleries", "Historical landmarks",
     "Park and gardens", "Musical and theatre", "Shopping districts",
@@ -73,42 +34,55 @@ function App() {
     setList(list.includes(val) ? list.filter(v => v !== val) : [...list, val])
   }
 
-  
-useEffect(() => {
-  if (map.current) return;
 
-  map.current = new mapboxgl.Map({
-    container: mapContainer.current,
-    style: "mapbox://styles/mapbox/streets-v11",
-    center: [-0.12, 51.5],
-    zoom: 11,
-  });
+    // ✅ 设置地图起点
+  const setStartPoint = (coord) => {
+    setStartCoord(coord);
 
-  let popup;
-  let startMarker = null;
+    if (startMarker.current) startMarker.current.remove();
 
-  // 设置点击地图选择起点
-  map.current.on("click", (e) => {
-    const { lng, lat } = e.lngLat;
-    const coord = [lng, lat];
-    setStartCoord(coord); 
-
-    if (startMarker) startMarker.remove();
-
-    startMarker = new mapboxgl.Marker({ color: "red" })
-      .setLngLat(coord) 
+    startMarker.current = new mapboxgl.Marker({ color: "red" })
+      .setLngLat(coord)
       .addTo(map.current);
 
     console.log("Start point set:", coord);
-  });
+  };
 
-  map.current.on("load", () => {
+  
+  //使用当前位置
+  const useCurrentLocation = () => {
+  if (!navigator.geolocation) {
+    alert("Geolocation not supported");
+    return;
+  }
+
+  // 设定起点 + 在地图上添加红色 marker 
+    navigator.geolocation.getCurrentPosition(pos => {
+      const coord = [pos.coords.longitude, pos.coords.latitude];
+      setStartPoint(coord);
+      map.current.flyTo({ center: coord, zoom: 14 });
+    }, () => {
+      alert("Failed to get your location");
+    });
+  };
+
+
+  
+  // 设置地图点击事件：点击地图选取起点
+  const setupMapClickToSetStartPoint = () => {
+    map.current.on("click", (e) => {
+      const coord = [e.lngLat.lng, e.lngLat.lat];
+      setStartPoint(coord);
+    });
+  };
+
+
+
+  // 设置 landmarks 图层与鼠标悬浮弹窗
+  const setupLandmarkLayer = () => {
     map.current.addSource("landmarks", {
       type: "geojson",
-      data: {
-        type: "FeatureCollection",
-        features: [],
-      },
+      data: { type: "FeatureCollection", features: [] },
     });
 
     map.current.addLayer({
@@ -123,38 +97,101 @@ useEffect(() => {
       },
     });
 
-    map.current.on("mouseenter", "landmark-points", (e) => {
-      map.current.getCanvas().style.cursor = "pointer";
-      const props = e.features[0].properties;
-      const coords = e.features[0].geometry.coordinates;
-      const html = `
-        <strong>${props.name}</strong><br/>
-        Type: ${props.type}<br/>
-        Tags: ${props.Tags}<br/>
-        Season: ${props.BestSeason}<br/>
-        Popular: ${props.Popular}<br/>
-        Charge: ${props.Charge}
-      `;
-      popup = new mapboxgl.Popup({
-        closeButton: false,
-        closeOnClick: false,
-      })
-        .setLngLat(coords)
-        .setHTML(html)
-        .addTo(map.current);
-    });
 
-    map.current.on("mouseleave", "landmark-points", () => {
-      map.current.getCanvas().style.cursor = "";
-      if (popup) popup.remove();
-    });
+      let popup;
+
+
+  map.current.on("mouseenter", "landmark-points", (e) => {
+    map.current.getCanvas().style.cursor = "pointer";
+    const p = e.features[0].properties;
+    const coords = e.features[0].geometry.coordinates;
+    const html = `
+      <strong>${p.name}</strong><br/>
+      Type: ${p.type}<br/>
+      Tags: ${p.Tags}<br/>
+      Season: ${p.BestSeason}<br/>
+      Popular: ${p.Popular}<br/>
+      Charge: ${p.Charge}
+    `;
+    popup = new mapboxgl.Popup({
+      closeButton: false,
+      closeOnClick: false,
+    })
+      .setLngLat(coords)
+      .setHTML(html)
+      .addTo(map.current);
   });
+
+  map.current.on("mouseleave", "landmark-points", () => {
+    map.current.getCanvas().style.cursor = "";
+    if (popup) popup.remove();
+  });
+};
+
+
+
+// 初始化地图并绑定所有事件
+const initializeMap = () => {
+  map.current = new mapboxgl.Map({
+    container: mapContainer.current,
+    style: "mapbox://styles/mapbox/streets-v11",
+    center: [-0.12, 51.5],
+    zoom: 11,
+  });
+
+  map.current.on("load", () => {
+    setupLandmarkLayer();
+  });
+
+  setupMapClickToSetStartPoint();
+};
+
+// 初始化地图，只运行一次
+useEffect(() => {
+  if (map.current) return;
+  initializeMap();
 }, []);
 
+
+
+
+    // 清除地图上的兴趣点图层和路径图层
+const resetAll = () => {
+  setTags([]);
+  setSeasons([]);
+  setPopular("");
+  setCharge("");
+  setStartCoord(null);
+
+  if (startMarker.current) {
+    startMarker.current.remove();
+    startMarker.current = null;
+  }
+
+  if (map.current?.getSource("landmarks")) {
+    map.current.getSource("landmarks").setData({
+      type: "FeatureCollection",
+      features: [],
+    });
+  }
+
+  if (map.current?.getSource("route")) {
+    map.current.removeLayer("route-line");
+    map.current.removeSource("route");
+  }
+
+  // ✅ 清空右上角路线详情内容
+  document.getElementById("route-details").innerHTML = "";
+};
+
+
+
+//筛选逻辑
 const handleFilter = async () => {
   const res = await fetch("/label_points.geojson");
   const geojson = await res.json();
 
+  // 根据 tag、season、popular、charge 筛选
   const filtered = {
     type: "FeatureCollection",
     features: geojson.features.filter((f) => {
@@ -170,8 +207,7 @@ const handleFilter = async () => {
         );
       const popularMatch = !popular || String(p.Popular) === popular;
       const chargeMatch =
-        charge === "both" ||
-        (charge === "yes" && p.Charge.toLowerCase() === "yes") ||
+        charge === "yes" ||
         (charge === "no" && p.Charge.toLowerCase() === "no");
 
       return tagMatch && seasonMatch && popularMatch && chargeMatch;
@@ -214,8 +250,10 @@ const handleFilter = async () => {
     return;
   }
 
+  // 把结果加载到地图上
   map.current.getSource("landmarks").setData(filtered);
 
+  // 调用路径规划
   buildOptimizedRoute(filtered.features);
 
 };
@@ -322,11 +360,17 @@ const buildOptimizedRoute = async (features) => {
       return;
     }
 
+      // ✅ 在这里保存数据到 React 状态
+    const trip = data.trips[0];
+    setRouteTrip(trip);
+    setSelectedFeatures([...selected]); // 保存用于 UI 展示的景点顺序
+
+
     const routeGeojson = {
       type: "FeatureCollection",
       features: [{
         type: "Feature",
-        geometry: data.trips[0].geometry,
+        geometry: trip.geometry,
         properties: {}
       }]
     };
@@ -358,38 +402,20 @@ const buildOptimizedRoute = async (features) => {
     console.log("✅ Final walk path:", coords);
 
 
-    // 渲染右侧路线详情
-const detailsEl = document.getElementById("route-details");
-const trip = data.trips[0];
-const legs = trip.legs || [];
-
-const totalDistance = (trip.distance / 1000).toFixed(2);
-const totalDuration = Math.round(trip.duration / 60);
-
-let html = `<strong>🚶 Total: ${totalDistance} km · ${totalDuration} min</strong><hr/>`;
-
-legs.forEach((leg, idx) => {
-  const dist = (leg.distance / 1000).toFixed(2);
-  const time = Math.round(leg.duration / 60);
-  html += `
-    <div><strong>Leg ${idx + 1}</strong> — ${dist} km · ${time} min</div>
-    <ul style="margin: 0 0 10px 15px;">
-      ${leg.steps.map(step => `<li>${step.maneuver.instruction} (${(step.distance/1000).toFixed(2)} km)</li>`).join("")}
-    </ul>
-  `;
-});
-detailsEl.innerHTML = html;
-
 
 
   } catch (error) {
-    console.log("🧭 Sending Optimization API request");
+
+    console.log("Sending Optimization API request");
+    console.log("✅ trip", trip);
+console.log("✅ selected", selected);
+
 console.log("Start Coord:", startCoord);
 console.log("Features:", features);
 console.log("All coords:", [startCoord, ...features.map(f => f.geometry.coordinates)]);
 console.log("Coord string:", coordString);
 console.log("URL:", url);
-console.error("❌ Optimization error:", err);
+console.error("❌ Optimization error:", error);
 
   }
 };
@@ -403,7 +429,7 @@ return (
       
       {/* 左侧筛选区域 */}
       <div style={{ width: "20%", padding: "1rem", overflowY: "auto", borderRight: "1px solid #ccc" }}>
-        <h3>🧭 What kind of places do you love most?</h3>
+        <h3>What kind of places do you love most?(Multiple Selection)</h3>
         {allTags.map(tag => (
           <label key={tag} style={{ display: "block" }}>
             <input
@@ -415,7 +441,7 @@ return (
           </label>
         ))}
 
-        <h3>🌤️ Which season do you plan to visit London?</h3>
+        <h3>Which season do you plan to visit London?(Multiple Selection)</h3>
         {allSeasons.map(season => (
           <label key={season} style={{ display: "block" }}>
             <input
@@ -427,11 +453,10 @@ return (
           </label>
         ))}
 
-        <h3>🌟 Do you prefer famous places or hidden gems?</h3>
+        <h3>Do you prefer famous places or hidden gems?</h3>
         {[
-          { label: "Hidden gems", value: "1" },
-          { label: "Moderately Known", value: "2" },
-          { label: "Famous", value: "3" },
+          { label: "Less-known", value: "1" },
+          { label: "Well-known", value: "3" },
         ].map(opt => (
           <label key={opt.value} style={{ display: "block" }}>
             <input
@@ -445,8 +470,8 @@ return (
           </label>
         ))}
 
-        <h3>💸 Are you okay with ticketed (paid) attractions?</h3>
-        {["yes", "no", "both"].map(opt => (
+        <h3>Are you okay with ticketed (paid) attractions?</h3>
+        {["yes", "no"].map(opt => (
           <label key={opt} style={{ display: "block" }}>
             <input
               type="radio"
@@ -455,7 +480,7 @@ return (
               checked={charge === opt}
               onChange={() => setCharge(opt)}
             />
-            {" " + (opt === "yes" ? "Yes" : opt === "no" ? "No" : "No Preference")}
+            {" " + (opt === "yes" ? "Yes" : "No")}
           </label>
         ))}
 
@@ -484,7 +509,7 @@ return (
         style={{
           position: "absolute",
           top: "10px",
-          left: "10px",
+          left: "22%",
           zIndex: 10,
           padding: "8px 12px",
           background: "#3b9ddd",
@@ -494,28 +519,37 @@ return (
           cursor: "pointer"
         }}
       >
-        📍 Use My Location
+        Use My Location
       </button>
     </div>
 
     {/* 右上角：路线详情面板 */}
-    <div
-      id="route-details"
-      style={{
-        position: "absolute",
-        top: "10px",
-        right: "10px",
-        width: "280px",
-        maxHeight: "80vh",
-        overflowY: "auto",
-        background: "rgba(255,255,255,0.95)",
-        borderRadius: "8px",
-        padding: "10px",
-        fontSize: "13px",
-        boxShadow: "0 2px 6px rgba(0,0,0,0.2)",
-        zIndex: 10,
-      }}
-    ></div>
+<div
+  id="route-details"
+  style={{
+    position: "absolute",
+    top: "10px",
+    right: "10px",
+    width: "20%",
+    height: "40%",
+    overflowY: "auto",
+    background: "rgba(255,255,255,0.7)",
+    borderRadius: "8px",
+    padding: "10px",
+    fontSize: "13px",
+    boxShadow: "0 2px 6px rgba(0,0,0,0.2)",
+    zIndex: 10,
+  }}
+>
+  <RouteDetailsAccordion 
+  trip={routeTrip} 
+  selected={selectedFeatures} 
+  map={map.current}
+  />
+  
+  {/*<div style={{ color: "red" }}>📦 DEBUG PANEL</div>*/}
+</div>
+
   </>
 )
 }

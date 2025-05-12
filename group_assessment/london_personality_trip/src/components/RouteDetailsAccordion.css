@@ -1,0 +1,52 @@
+/* 引入字体 */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+
+.route-panel {
+  font-family: 'Merriweather', serif;
+  color: #333333;
+  max-height: 80vh;
+  overflow-y: visible;
+  padding: 12px;
+  background-color: #f6f1ec; /* 浅沙色 */
+}
+
+.route-intro {
+  color: #000009; 
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 24px;
+  margin-top: 10px;
+}
+
+
+.route-total {
+  color: #000009; 
+  font-size: 18px;
+  text-align: center;
+  margin-top: -10px;
+  margin-bottom: -10px;
+}
+
+
+.route-card {
+  background-color: #ffffff;
+  border: 1px solid #f6f1ec; 
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease;
+}
+
+.route-card:hover {
+  transform: scale(1.02);
+  border-color: #8E6CFF; /* 亮紫 */
+}
+
+.route-card-body {
+  padding: 2px;
+}
+
+.route-card-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
