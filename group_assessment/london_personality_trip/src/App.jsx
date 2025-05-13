@@ -41,7 +41,7 @@ function App() {
 
     if (startMarker.current) startMarker.current.remove();
 
-    startMarker.current = new mapboxgl.Marker({ color: "red" })
+    startMarker.current = new mapboxgl.Marker({ color:"#f36b1c"})
       .setLngLat(coord)
       .addTo(map.current);
 
@@ -56,7 +56,7 @@ function App() {
     return;
   }
 
-  // 设定起点 + 在地图上添加红色 marker 
+  // 设定起点 + 在地图上添加
     navigator.geolocation.getCurrentPosition(pos => {
       const coord = [pos.coords.longitude, pos.coords.latitude];
       setStartPoint(coord);
@@ -90,9 +90,9 @@ function App() {
       type: "circle",
       source: "landmarks",
       paint: {
-        "circle-radius": 6,
-        "circle-color": "#e63946",
-        "circle-stroke-width": 1,
+        "circle-radius": 10,
+        "circle-color": "#8E6CFF",
+        "circle-stroke-width": 2,
         "circle-stroke-color": "#fff",
       },
     });
@@ -134,14 +134,18 @@ function App() {
 const initializeMap = () => {
   map.current = new mapboxgl.Map({
     container: mapContainer.current,
-    style: "mapbox://styles/mapbox/streets-v11",
+    style: "mapbox://styles/ucfnhbg/cmamm5hrq00du01s50qgg2zdx/draft",
     center: [-0.12, 51.5],
     zoom: 11,
   });
 
   map.current.on("load", () => {
-    setupLandmarkLayer();
-  });
+  setupLandmarkLayer();
+
+});
+
+
+
 
   setupMapClickToSetStartPoint();
 };
@@ -151,6 +155,7 @@ useEffect(() => {
   if (map.current) return;
   initializeMap();
 }, []);
+
 
 
 
@@ -227,12 +232,12 @@ const handleFilter = async () => {
           <button id="reset-button" style="
             margin-top: 0.5rem;
             padding: 6px 12px;
-            background-color: #e63946;
+            background-color: #f36b1c;
             color: white;
             border: none;
             border-radius: 4px;
             cursor: pointer;
-          ">🔄 Start Over</button>
+          ">Start Over</button>
         </div>
       `)
       .addTo(map.current);
@@ -298,12 +303,12 @@ const buildOptimizedRoute = async (features) => {
           <button id="reset-button" style="
             margin-top: 0.5rem;
             padding: 6px 12px;
-            background-color: #e63946;
+            background-color: #f36b1c;
             color: white;
             border: none;
             border-radius: 4px;
             cursor: pointer;
-          ">🔄 Start Over</button>
+          ">Start Over</button>
         </div>
       `)
       .addTo(map.current);
@@ -390,7 +395,7 @@ const buildOptimizedRoute = async (features) => {
           "line-cap": "round"
         },
         paint: {
-          "line-color": "#3b9ddd",
+          "line-color": "#F29B7A",
           "line-width": 5,
           "line-opacity": 0.8
         }
@@ -424,134 +429,199 @@ console.error("❌ Optimization error:", error);
 
 return (
   <>
-    {/* 主体布局区域 */}
+    {/* 主体区域：左侧+地图+按钮（都要在同一个 div 内） */}
     <div style={{ display: "flex", height: "100vh", position: "relative" }}>
       
-      {/* 左侧筛选区域 */}
-      <div style={{ width: "20%", padding: "1rem", overflowY: "auto", borderRight: "1px solid #ccc" }}>
-        <h3>What kind of places do you love most?(Multiple Selection)</h3>
-        {allTags.map(tag => (
-          <label key={tag} style={{ display: "block" }}>
-            <input
-              type="checkbox"
-              checked={tags.includes(tag)}
-              onChange={() => toggle(tag, tags, setTags)}
-            />
-            {" " + tag}
-          </label>
-        ))}
+      {/* 左侧筛选气泡 */}
+      <div style={{
+        width: "30%",
+        padding: "1rem",
+        overflowY: "auto",
+        borderRight: "1px solid #ccc",
+        display: "flex",
+        flexDirection: "column",
+        gap: "12px"
+      }}>
 
-        <h3>Which season do you plan to visit London?(Multiple Selection)</h3>
-        {allSeasons.map(season => (
-          <label key={season} style={{ display: "block" }}>
-            <input
-              type="checkbox"
-              checked={seasons.includes(season)}
-              onChange={() => toggle(season, seasons, setSeasons)}
-            />
-            {" " + season}
-          </label>
-        ))}
+        {/* 页面标题 */}
+<h2 style={{ 
+  fontFamily: "'Merriweather', serif", 
+  color: "#000", 
+  fontSize: "22px",
+  marginTop: "20px",
+  marginBottom: "20px",
+  textAlign: "center"
+   }}>
+  Plan Your London Route!
+</h2>
 
-        <h3>Do you prefer famous places or hidden gems?</h3>
-        {[
-          { label: "Less-known", value: "1" },
-          { label: "Well-known", value: "3" },
-        ].map(opt => (
-          <label key={opt.value} style={{ display: "block" }}>
-            <input
-              type="radio"
-              name="popular"
-              value={opt.value}
-              checked={popular === opt.value}
-              onChange={() => setPopular(opt.value)}
-            />
-            {" " + opt.label}
-          </label>
-        ))}
+{/* 起点提示 + 使用当前位置 */}
+<div className="bubble assistant" style={{ 
+  display: "flex", 
+  fontSize: "14px",
+  justifyContent: "space-between", 
+  alignItems: "center" }}>
+  <strong>Please select a starting point on the map</strong>
+  <button
+    onClick={useCurrentLocation}
+    style={{
+      marginLeft: "10px",
+      background: "#e28b6a",
+      color: "#fff",
+      border: "none",
+      borderRadius: "6px",
+      padding: "6px 10px",
+      fontSize: "14px",
+      cursor: "pointer"
+    }}
+  >
+    Use My Location
+  </button>
+</div>
 
-        <h3>Are you okay with ticketed (paid) attractions?</h3>
-        {["yes", "no"].map(opt => (
-          <label key={opt} style={{ display: "block" }}>
-            <input
-              type="radio"
-              name="charge"
-              value={opt}
-              checked={charge === opt}
-              onChange={() => setCharge(opt)}
-            />
-            {" " + (opt === "yes" ? "Yes" : "No")}
-          </label>
-        ))}
 
-        <br />
 
-        {/* 按钮区 */}
-        <div style={{ display: "flex", gap: "1rem", marginTop: "1rem" }}>
-          <button onClick={handleFilter} style={{ padding: "10px", flex: 1 }}>
-            Apply Filters
-          </button>
-          <button onClick={resetAll} style={{ padding: "10px", flex: 1 }}>
-            Reset
-          </button>
-        </div>
+  {/* 标签筛选 */}
+  <div className="bubble assistant" style={{ fontSize: "14px" }}>
+    <strong>What kind of places do you love most?</strong>
+    <div style={{ marginTop: "14px" }}>
+      {allTags.map(tag => (
+        <label key={tag} style={{ display: "block" }}>
+          <input
+            type="checkbox"
+            checked={tags.includes(tag)}
+            onChange={() => toggle(tag, tags, setTags)}
+          />
+          {" " + tag}
+        </label>
+      ))}
+    </div>
+  </div>
+
+  {/* 季节筛选 */}
+  <div className="bubble assistant" style={{ fontSize: "14px" }}>
+    <strong>Which season do you plan to visit London?</strong>
+    <div style={{ marginTop: "8px" }}>
+      {allSeasons.map(season => (
+        <label key={season} style={{ display: "block" }}>
+          <input
+            type="checkbox"
+            checked={seasons.includes(season)}
+            onChange={() => toggle(season, seasons, setSeasons)}
+          />
+          {" " + season}
+        </label>
+      ))}
+    </div>
+  </div>
+
+  {/* 知名度 */}
+  <div className="bubble assistant" style={{ fontSize: "14px" }}>
+    <strong>Do you prefer famous places or hidden gems?</strong>
+    <div style={{ marginTop: "8px" }}>
+      {[
+        { label: "Less-known", value: "1" },
+        { label: "Well-known", value: "3" },
+      ].map(opt => (
+        <label key={opt.value} style={{ display: "block" }}>
+          <input
+            type="radio"
+            name="popular"
+            value={opt.value}
+            checked={popular === opt.value}
+            onChange={() => setPopular(opt.value)}
+          />
+          {" " + opt.label}
+        </label>
+      ))}
+    </div>
+  </div>
+
+  {/* 是否付费 */}
+  <div className="bubble assistant" style={{ fontSize: "14px" }}>
+    <strong>Are you okay with ticketed (paid) attractions?</strong>
+    <div style={{ marginTop: "8px" }}>
+      {["yes", "no"].map(opt => (
+        <label key={opt} style={{ display: "block" }}>
+          <input
+            type="radio"
+            name="charge"
+            value={opt}
+            checked={charge === opt}
+            onChange={() => setCharge(opt)}
+          />
+          {" " + (opt === "yes" ? "Yes" : "No")}
+        </label>
+      ))}
+    </div>
+  </div>
+
+  {/* 按钮区 */}
+  <div className="bubble assistant" style={{ display: "flex", gap: "20px", justifyContent: "space-between" }}>
+    <button
+      onClick={handleFilter}
+      style={{
+        padding: "8px 2px",
+        flex: 1,
+        background: "#e28b6a",
+        color: "#fff",
+        border: "none",
+        borderRadius: "6px"
+      }}
+    >
+      Apply Filters
+    </button>
+    <button
+      onClick={resetAll}
+      style={{
+        padding: "8px 2px",
+        flex: 1,
+        background: "#ccc",
+        border: "none",
+        borderRadius: "6px"
+      }}
+    >
+      Restart
+    </button>
+  </div>
+
+</div>
+
+
+        {/* 地图容器 */}
+        <div
+          ref={mapContainer}
+          style={{ width: "70%", height: "100%", position: "relative", zIndex: 0 }}
+        ></div>
+
       </div>
 
-      {/* 地图容器 */}
+      {/* 右上角：路线详情面板 */}
       <div
-        ref={mapContainer}
-        style={{ width: "80%", height: "100%", position: "relative", zIndex: 0 }}
-      ></div>
-
-      {/* 左上角按钮：使用当前位置 */}
-      <button
-        onClick={useCurrentLocation}
+        id="route-details"
         style={{
           position: "absolute",
           top: "10px",
-          left: "22%",
+          right: "10px",
+          width: "20%",
+          height: "40%",
+          overflowY: "auto",
+          background: "#f6f1ec83",
+          borderRadius: "8px",
+          padding: "10px",
+          fontSize: "13px",
+          boxShadow: "0 2px 6px rgba(0,0,0,0.2)",
           zIndex: 10,
-          padding: "8px 12px",
-          background: "#3b9ddd",
-          color: "#fff",
-          border: "none",
-          borderRadius: "6px",
-          cursor: "pointer"
         }}
       >
-        Use My Location
-      </button>
-    </div>
-
-    {/* 右上角：路线详情面板 */}
-<div
-  id="route-details"
-  style={{
-    position: "absolute",
-    top: "10px",
-    right: "10px",
-    width: "20%",
-    height: "40%",
-    overflowY: "auto",
-    background: "rgba(255,255,255,0.7)",
-    borderRadius: "8px",
-    padding: "10px",
-    fontSize: "13px",
-    boxShadow: "0 2px 6px rgba(0,0,0,0.2)",
-    zIndex: 10,
-  }}
->
-  <RouteDetailsAccordion 
-  trip={routeTrip} 
-  selected={selectedFeatures} 
-  map={map.current}
-  />
-  
-  {/*<div style={{ color: "red" }}>📦 DEBUG PANEL</div>*/}
-</div>
-
-  </>
-)
+        <RouteDetailsAccordion 
+          trip={routeTrip} 
+          selected={selectedFeatures} 
+          map={map.current}
+        />
+      </div>
+    </>
+  );
 }
 
 export default App

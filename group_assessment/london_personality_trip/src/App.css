@@ -40,3 +40,21 @@
 .read-the-docs {
   color: #888;
 }
+
+
+.bubble {
+  padding: 12px 16px;
+  border-radius: 12px;
+  background-color: #f6f1ec;
+  max-width: 100%;
+  word-wrap: break-word;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.bubble.assistant {
+  background-color: #f6f1ec;
+  color: #ffffff;
+  font-family: 'Merriweather', serif;
+  font-size: 14px;
+  color: #333;
+}

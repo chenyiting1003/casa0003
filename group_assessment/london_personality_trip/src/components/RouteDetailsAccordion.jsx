@@ -57,7 +57,8 @@ function RouteDetailsAccordion({ trip, selected, map }) {
       <Card className="mb-2 route-card">
         <Card.Body>
           <p className="route-total">
-            Total: {totalDistance} km · {totalDuration} min
+            Total: {totalDistance} km · {totalDuration} min<br />
+            Click the card to zoom in
             </p>
         </Card.Body>
       </Card>
