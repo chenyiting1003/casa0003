@@ -4,6 +4,8 @@ import "mapbox-gl/dist/mapbox-gl.css";
 import "./App.css";
 import RouteDetailsAccordion from "./components/RouteDetailsAccordion.jsx";
 import './components/RouteDetailsAccordion.css';
+import { useNavigate } from "react-router-dom";
+
 
 
 mapboxgl.accessToken = "pk.eyJ1IjoidWNmbmhiZyIsImEiOiJjbTZnZnV5cjEwMHZyMmxzYm50NDFpZnZtIn0.avm3fmwvzK3wOTLbezZjBQ"
@@ -22,6 +24,21 @@ function App() {
   const [routeTrip, setRouteTrip] = useState(null);
   const [selectedFeatures, setSelectedFeatures] = useState([]);
 
+  const navigate = useNavigate();
+
+
+  
+// ✅ 判断坐标是否合法
+const isValidCoord = (coord) =>
+  Array.isArray(coord) &&
+  coord.length === 2 &&
+  typeof coord[0] === "number" &&
+  typeof coord[1] === "number" &&
+  !isNaN(coord[0]) &&
+  !isNaN(coord[1]);
+
+
+
   
   const allTags = [
     "Modern landmarks", "Museums", "Art galleries", "Historical landmarks",
@@ -35,36 +52,45 @@ function App() {
   }
 
 
-    // ✅ 设置地图起点
-  const setStartPoint = (coord) => {
-    setStartCoord(coord);
+// ✅ 设置地图起点 + Marker
+const setStartPoint = (coord) => {
+  if (!isValidCoord(coord)) {
+    console.warn("Invalid coordinate passed to setStartPoint:", coord);
+    return;
+  }
 
-    if (startMarker.current) startMarker.current.remove();
+  setStartCoord(coord);
 
-    startMarker.current = new mapboxgl.Marker({ color:"#f36b1c"})
-      .setLngLat(coord)
-      .addTo(map.current);
+  if (startMarker.current) startMarker.current.remove();
 
-    console.log("Start point set:", coord);
-  };
+  startMarker.current = new mapboxgl.Marker({ color: "#f36b1c" })
+    .setLngLat(coord)
+    .addTo(map.current);
+
+  console.log("Start point set:", coord);
+};
+
 
   
-  //使用当前位置
-  const useCurrentLocation = () => {
+const useCurrentLocation = () => {
   if (!navigator.geolocation) {
     alert("Geolocation not supported");
     return;
   }
 
-  // 设定起点 + 在地图上添加
-    navigator.geolocation.getCurrentPosition(pos => {
-      const coord = [pos.coords.longitude, pos.coords.latitude];
-      setStartPoint(coord);
+  navigator.geolocation.getCurrentPosition(pos => {
+    const coord = [pos.coords.longitude, pos.coords.latitude];
+    setStartPoint(coord);
+
+    if (isValidCoord(coord)) {
       map.current.flyTo({ center: coord, zoom: 14 });
-    }, () => {
-      alert("Failed to get your location");
-    });
-  };
+    } else {
+      console.warn("Skipping flyTo due to invalid coord:", coord);
+    }
+  }, () => {
+    alert("Failed to get your location");
+  });
+};
 
 
   
@@ -146,7 +172,6 @@ const initializeMap = () => {
 
 
 
-
   setupMapClickToSetStartPoint();
 };
 
@@ -158,36 +183,46 @@ useEffect(() => {
 
 
 
+const resetAll = () => {
+  navigate(0);  // ✅ 局部刷新当前页面，保留缓存、快速回到初始状态
+};
+
+
+
+//const resetAll = () => {
+  //window.location.reload();  // ✅ 一键重启整个页面，恢复一切初始状态
+//};
+
 
 
     // 清除地图上的兴趣点图层和路径图层
-const resetAll = () => {
-  setTags([]);
-  setSeasons([]);
-  setPopular("");
-  setCharge("");
-  setStartCoord(null);
+//const resetAll = () => {
+  //setTags([]);
+  //setSeasons([]);
+  //setPopular("");
+  //setCharge("");
+  //setStartCoord(null);
 
-  if (startMarker.current) {
-    startMarker.current.remove();
-    startMarker.current = null;
-  }
+  //if (startMarker.current) {
+    //startMarker.current.remove();
+    //startMarker.current = null;
+  //}
 
-  if (map.current?.getSource("landmarks")) {
-    map.current.getSource("landmarks").setData({
-      type: "FeatureCollection",
-      features: [],
-    });
-  }
+  //if (map.current?.getSource("landmarks")) {
+    //map.current.getSource("landmarks").setData({
+      //type: "FeatureCollection",
+      //features: [],
+    //});
+  //}
 
-  if (map.current?.getSource("route")) {
-    map.current.removeLayer("route-line");
-    map.current.removeSource("route");
-  }
+  //if (map.current?.getSource("route")) {
+    //map.current.removeLayer("route-line");
+    //map.current.removeSource("route");
+  //}
 
   // ✅ 清空右上角路线详情内容
-  document.getElementById("route-details").innerHTML = "";
-};
+  //document.getElementById("route-details").innerHTML = "";
+//};
 
 
 
@@ -195,6 +230,11 @@ const resetAll = () => {
 const handleFilter = async () => {
   const res = await fetch("/label_points.geojson");
   const geojson = await res.json();
+
+  if (!isValidCoord(startCoord)) {
+  alert("Please reselect a starting point on the map before applying filters.");
+  return;
+}
 
   // 根据 tag、season、popular、charge 筛选
   const filtered = {
@@ -265,8 +305,8 @@ const handleFilter = async () => {
 
 // 生成路径的函数
 const buildOptimizedRoute = async (features) => {
-  if (!startCoord) {
-    alert("Please click on the map to select a start point first.");
+  if (!isValidCoord(startCoord)) {
+    alert("Please click on the map to select a valid start point first.");
     return;
   }
 
