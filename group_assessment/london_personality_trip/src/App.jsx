@@ -641,7 +641,7 @@ return (
         id="route-details"
         style={{
           position: "absolute",
-          top: "10px",
+          top: "90px",
           right: "10px",
           width: "20%",
           height: "40%",
