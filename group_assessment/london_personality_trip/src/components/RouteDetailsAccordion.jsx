@@ -1,6 +1,3 @@
-// ✅ 依赖：react-bootstrap
-// 安装命令：npm install react-bootstrap bootstrap
-
 import Accordion from "react-bootstrap/Accordion";
 import Card from "react-bootstrap/Card";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -11,7 +8,6 @@ import './RouteDetailsAccordion.css';
 function RouteDetailsAccordion({ trip, selected, map }) {
   if (!trip || !selected || selected.length === 0) return null;
 
-  // 调试日志
   console.log("Trip loaded:", trip);
   console.log("Selected places:", selected.map(f => f.properties.name));
   console.log("map instance:", map);
@@ -21,7 +17,7 @@ function RouteDetailsAccordion({ trip, selected, map }) {
   const legs = trip.legs || [];
   const names = ["Start Point", ...selected.map(f => f.properties.name)];
 
-  // 点击跳转函数
+  // click and fly to fuction
   const flyToLegMidpoint = (leg, idx) => {
     const coords = leg.steps.flatMap(step => step.geometry?.coordinates || []);
     let mid;

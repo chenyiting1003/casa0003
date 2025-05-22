@@ -1,4 +1,3 @@
-/* 引入字体 */
 @import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
 
 .route-panel {
@@ -7,7 +6,7 @@
   max-height: 80vh;
   overflow-y: visible;
   padding: 12px;
-  background-color: #f6f1ec; /* 浅沙色 */
+  background-color: #f6f1ec; 
 }
 
 .route-intro {
@@ -37,7 +36,7 @@
 
 .route-card:hover {
   transform: scale(1.02);
-  border-color: #8E6CFF; /* 亮紫 */
+  border-color: #8E6CFF; 
 }
 
 .route-card-body {
