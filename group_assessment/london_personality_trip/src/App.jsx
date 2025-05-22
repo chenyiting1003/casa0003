@@ -447,7 +447,7 @@ return (
   <div style={{
     position: "absolute",
     right: "20px",
-    bottom:"20px",
+    bottom:"80px",
     zIndex: 999,
     backgroundColor: "#fff8f2",
     border: "1px solid #ccc",
