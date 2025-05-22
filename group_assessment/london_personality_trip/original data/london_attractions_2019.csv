@@ -1,0 +1,267 @@
+Rank,Site,Total visits,Charge /free,% +/-,Group,Note
+1,British Museum,"6,239,983",F/C,7%,,a
+2,Tate Modern,"6,098,340",F/C,3.90%,TATE,
+3,"National Gallery, The","6,011,007",F/C,4.80%,,
+4,NHM (South Kensington),"5,423,932",F/C,4%,NHM,
+5,Southbank Centre,"4,360,255",F/C,-2.05%,,
+6,V&A South Kensington,"3,992,198",F/C,1%,V&A,
+7,Science Museum,"3,301,975",F,4%,SMG,
+8,Tower of London,"2,984,499",C,4.40%,HRP,
+9,Royal Museums Greenwich,"2,906,000",F/C,14%,,b
+10,Somerset House,"2,841,772",F/C,-9.60%,,c
+11,"Royal Botanic Gardens, Kew","2,316,699",C,23%,RBGK,d
+12,National Museum of Scotland,"2,210,024",F/C,-1%,NMS,
+13,Edinburgh Castle,"2,201,354",C,4%,HES,e
+14,Chester Zoo,"2,086,785",C,5.90%,,
+15,Kelvingrove Art Gallery & Museum,"1,832,097",F,73.73%,GM,f
+16,Tate Britain,"1,808,637",F/C,42%,TATE,g
+17,Royal Albert Hall,"1,721,632",C,-1.70%,,
+18,St Paul's Cathedral,"1,716,417",F/C,3.60%,,
+19,National Portrait Gallery London,"1,619,694",F/C,1.02%,,
+20,Stonehenge,"1,604,248",C,3.10%,EH,
+21,Scottish National Gallery,"1,583,231",F/C,-9%,NGS,
+22,Westminster Abbey,"1,574,401",F/C,1.84%,,
+23,British Library,"1,534,860",F/C,5.35%,,
+24,Riverside Museum,"1,364,739",F,8.79%,GM,
+25,Roman Baths and Pump Room,"1,325,085",C,1.70%,,
+26,Old Royal Naval College,"1,264,683",F/C,-1%,,
+27,Royal Academy,"1,248,882",F/C,-2%,,h
+28,RHS Garden Wisley,"1,232,772",F/C,15.10%,RHS,
+29,National Museum Royal Navy,"1,122,072",F/C,-9%,,
+30,ZSL London Zoo,"1,078,519",C,0.50%,ZSL,
+31,IWM London,"1,073,936",F/C,1%,IWM,
+32,Hampton Court Palace,"1,072,823",C,-3.80%,HRP,h
+33,UK Parliament,"1,063,501",F/C,-1.90%,,
+34,Longleat,"1,011,314",C,12%,,i
+35,Eden Project,"1,010,095",C,0.60%,,
+36,Giant's Causeway,"998,014",F/C,-4%,NT,
+37,"Royal Botanic Gardens, Edinburgh","991,110",F/C,6%,RBGE,
+38,Blenheim Palace,"984,913",F/C,9.23%,THE,
+39,The Royal Shakespeare Theatre and Swan Theatre,"974,424",F/C,-6.80%,,
+40,Museum of Liverpool,"956,918",F,-1%,NML,
+41,Horniman Museum and Gardens,"952,954",F/C,2.80%,,
+42,Ashmolean Museum of Art and Archaeology,"930,669",F/C,5%,OUM,
+43,Tower Bridge Exhibition,"889,338",C,6%,CLC,
+44,Canterbury Cathedral,"876,646",F/C,-1.90%,,
+45,Merseyside Maritime Museum,"836,980",F,-7%,NML,
+46,Titanic Belfast,"828,017",F/C,-1%,,
+47,"National War Museum, Edinburgh","805,934",C,1%,NMS,
+48,Oxford University Museum of Natural History,"792,282",F,1%,OUM,
+49,Shakespeare's Globe,"781,240",C,-4.60%,,h
+50,Bodleian Libraries,"760,815",F,-16%,OUM,j
+51,Durham Cathedral,"727,367",F,9.60%,,
+52,National Railway Museum,"714,379",F,-13.40%,SMG,k
+53,York Minster,"706,484",F/C,1.70%,,
+54,Museum of London,"706,219",F/C,1.70%,MOL,
+55,World Museum,"672,514",F,-53%,NML,l
+56,Clumber Park,"666,997",F/C,1%,NT,
+57,Tate Liverpool,"660,022",F/C,-6.67%,TATE,
+58,ZSL Whipsnade Zoo,"648,945",C,6.70%,ZSL,
+59,Birmingham Museum and Art Gallery,"644,100",F,-23%,BMT,m
+60,V&A Dundee,"624,600",F/C,83%,V&A,n
+61,Churchill War Rooms,"620,933",C,7%,IWM,
+62,Stirling Castle,"609,698",C,1%,HES,
+63,Chatsworth,"606,420",C,0.10%,THE,
+64,Edinburgh Zoo,"605,000",F/C,2%,,
+65,Gallery of Modern Art,"576,689",F,-8.97%,GM,o
+66,"Westonbirt, The National Arboretum","566,565",C,2.50%,FC,
+67,Attingham Park,"557,136",F/C,13%,NT,
+68,Museum of Science and Industry,"556,523",F,-21%,SMG,p
+69,Urquhart Castle,"547,518",C,6%,HES,
+70,Leeds Castle,"539,971",F/C,16%,THE,
+71,Glasgow Cathedral,"537,415",F,11%,HES,q
+72,Cliveden,"524,807",F/C,8%,NT,
+73,Kensington Palace,"510,304",C,-7.80%,HRP,r
+74,Scottish National Gallery of Modern Art,"508,090",F,-11%,NGS,s
+75,RAF Museum London,"496,614",F,0.90%,RAF,
+76,Ulster Museum,"492,689",F,-15.70%,NMNI,t
+77,Carrick-a-Rede,"485,736",F/C,-2%,NT,
+78,Pitt Rivers Museum,"468,013",F,-7%,OUM,
+79,Waddesdon Manor,"463,328",F/C,0.60%,NT,
+80,Glenfinnan Monument,"462,235",F/C,22%,NTS,q
+81,Belton House,"460,547",F/C,8%,NT,
+82,Calke Abbey,"458,380",F/C,16%,NT,
+83,RHS Garden Harlow Carr,"446,730",F/C,1.20%,RHS,
+84,National Science and Media Museum,"439,916",F,-4.30%,SMG,
+85,Glencoe Visitor Centre,"431,855",F,101%,NTS,u
+86,Shakespeare's Birthplace,"422,372",C,-0.60%,SBT,
+87,Fountains Abbey Estate,"412,435",F/C,6%,NT,
+88,London Transport Museum,"411,766",F/C,0.92%,,
+89,Kingston Lacy,"410,812",F/C,14%,NT,
+90,Polesden Lacey,"405,773",F/C,14%,NT,
+91,RAF Museum Cosford,"401,477",F,-7.10%,RAF,v
+92,IWM Duxford,"401,287",C,2%,IWM,
+93,Anglesey Abbey,"399,127",F/C,7%,NT,
+94,International Slavery Museum,"396,877",F,1%,NML,
+95,Mottisfont,"393,250",F/C,4%,NT,
+96,Stourhead,"392,929",F/C,0%,NT,
+97,Walker Art Gallery,"391,765",F,6%,NML,
+98,V&A Museum of Childhood,"386,944",F,-7%,V&A,
+99,Nymans Garden,"382,948",F/C,7%,NT,
+100,Scottish National Portrait Gallery,"372,743",F,4%,NGS,
+101,Dover Castle,"368,243",C,0.80%,EH,
+102,St Michael's Mount,"359,554",F/C,3%,NT,
+103,RHS Garden Hyde Hall,"359,230",F/C,7.40%,RHS,
+104,Tyntesfield,"356,766",F/C,15%,NT,
+105,Osborne,"354,709",C,16.30%,EH,
+106,The Fitzwilliam Museum,"349,484",F,-1%,UoCM,
+107,Dunham Massey,"340,235",F/C,9%,NT,
+108,Wimpole Estate,"335,199",F/C,9%,NT,
+109,Cambridge University Botanic Garden,"334,461",C,10%,UoCM,
+110,Culzean Castle & Country Park,"333,965",F/C,5%,NTS,
+111,HMS Belfast,"327,206",C,10%,IWM,
+112,Beaulieu,"327,121",C,2%,THE,
+113,Museum of London Docklands,"324,438",F/C,11.70%,MOL,w
+114,Wakehurst,"312,813",F/C,-12%,RBGK,
+115,Gibside,"307,900",F/C,12%,NT,
+116,Hardwick Hall,"298,283",F/C,2%,NT,
+117,Sheffield Park and Garden,"295,384",F/C,-4%,NT,
+118,Croome,"289,841",F/C,11%,NT,
+119,Quarry Bank,"285,762",F/C,16%,NT,
+120,Ickworth,"283,956",F/C,11%,NT,
+121,Dyrham Park,"282,547",F/C,11%,NT,
+122,Killerton,"281,910",F/C,5%,NT,
+123,Tate St Ives,"278,747",F/C,-7.90%,TATE,
+124,Lanhydrock,"275,079",F/C,1%,NT,
+125,Bodnant Garden,"271,339",F/C,6%,NT,
+126,Castle Howard,"269,044",C,18.40%,THE,
+127,WWT Slimbridge,"262,986",C,-1%,WWT,x
+128,Burns Birthplace Museum,"261,283",C,-4%,NTS,
+129,Corfe Castle,"259,655",F/C,8%,NT,
+130,RHS Garden Rosemoor,"255,861",F/C,9.30%,RHS,
+131,Cragside Estate,"255,005",F/C,7%,NT,
+132,Sudbury Hall,"254,083",F/C,25%,NT,
+133,Chartwell,"253,032",F/C,3%,NT,
+134,Saltram,"252,075",F/C,17%,NT,
+135,Wallington,"251,251",F/C,6%,NT,
+136,Charlecote Park,"250,032",F/C,17%,NT,
+137,Shugborough Estate,"246,180",F/C,17%,NT,
+138,IWM North,"244,564",F,-27%,IWM,y
+139,"Thinktank, Birmingham Science Museum","243,069",C,6%,BMT,z
+140,Mount Stewart,"239,371",F/C,5%,NT,
+141,Baddesley Clinton,"234,696",F/C,6%,NT,
+142,Stowe,"232,056",F/C,10%,NT,
+143,Kettle's Yard,"231,941",F,-5%,UoCM,
+144,Trelissick,"227,681",F/C,6%,NT,
+145,Hanbury Hall and Gardens,"227,624",F/C,12%,NT,
+146,Blickling,"225,624",F/C,15%,NT,
+147,Speke Hall,"224,913",F/C,9%,NT,
+148,People's Palace,"223,774",F,-34.68%,GM,aa
+149,Packwood House,"219,727",F/C,8%,NT,
+150,The Vyne,"219,053",F/C,15%,NT,
+151,Kedleston,"211,655",F/C,12%,NT,
+152,Oxford Botanical Gardens and Arboretum,"211,573",F/C,23%,OUM,bb
+153,Lady Lever Art Gallery,"210,790",F,4%,NML,
+154,Lacock,"210,709",F/C,6%,NT,
+155,Culloden Visitor Centre,"209,011",C,1%,NTS,
+156,Dunster Castle,"206,160",F/C,1%,NT,
+157,Knole,"204,902",F/C,12%,NT,
+158,Harewood House Trust,"201,694",C,5.90%,THE,
+159,WWT Martin Mere,"192,443",C,-9%,WWT,cc
+160,WWT London,"190,206",C,7%,WWT,
+161,Mary Rose The,"189,702",F/C,1%,,
+162,"Monument to the Great Fire of London, The","182,492",C,7%,CLC,
+163,Locomotion,"180,697",F,3.40%,SMG,
+164,Audley End House and Gardens,"175,725",C,3.30%,EH,
+165,Ulster Folk & Transport Museum,"172,712",C,18%,NMNI,dd
+166,Sedgwick Museum of Earth Sciences,"168,021",F,7%,UoCM,
+167,Whitby Abbey,"161,461",C,9.40%,EH,
+168,"Clifford's Tower, York","160,815",C,4%,EH,
+169,The St Mungo Museum of Religious Life And Art,"159,157",F,10.25%,GM,
+170,Tintagel Castle,"154,996",C,-32.80%,EH,ee
+171,Crathes Castle,"153,217",F/C,18%,NTS,
+172,Doune Castle,"152,987",C,8%,HES,q
+173,Walmer Castle and Gardens,"152,391",C,46.70%,EH,ff
+174,NHM (Tring),"151,787",F,1%,NHM,
+175,History of Science Museum,"148,412",F,-16%,OUM,
+176,Anne Hathaway's Cottage,"146,698",C,1.30%,SBT,
+177,Highland Safari Park,"142,000",F/C,-30%,,
+178,"1066 Battle of Hastings, Abbey and Battlefield","136,647",C,10.30%,EH,
+179,Wrest Park,"135,420",C,5%,EH,
+180,University Museum of Zoology,"134,739",F,8%,UoCM,
+181,Eltham Palace and Gardens,"134,238",C,22%,EH,
+182,Kenwood,"132,468",F,1%,EH,
+183,Carisbrooke Castle,"131,358",C,4.50%,EH,
+184,Shakespeare's New Place,"124,991",C,13.80%,SBT,
+185,Guildhall Art Gallery,"123,731",F/C,6%,CLC,
+186,Threave Garden,"120,840",C,24%,NTS,
+187,Kenilworth Castle and Elizabethan Garden,"119,047",C,8.20%,EH,
+188,Skara Brae,"115,136",C,3%,HES,
+189,National Museum of Rural Life,"113,525",C,13%,NMS,
+190,Ulster American Folk Park,"112,916",C,-3.60%,NMNI,
+191,Housesteads Roman Fort - Hadrian's Wall,"111,508",C,1.70%,EH,
+192,National Maritime Museum Cornwall,"110,386",F/C,-9%,,
+193,Burghley,"107,887",C,-8.20%,THE,
+194,Linlithgow Palace,"103,312",C,9%,HES,q
+195,Provand's Lordship,"94,481",F,5.66%,GM,
+196,WWT Arundel,"93,743",C,3%,WWT,
+197,Holkham Hall,"89,738",C,26.50%,THE,gg
+198,Piermaster's House,"89,140",F,-61%,NML,
+199,St Andrews Castle,"88,814",C,-3%,HES,
+200,Hall's Croft,"85,335",C,9.30%,SBT,
+201,WWT Washington,"83,817",C,14%,WWT,hh
+202,Mary Arden's Farm,"81,364",C,2.50%,SBT,
+203,Brodie Castle,"79,634",F/C,-70%,NTS,ii
+204,Blackness Castle,"79,265",C,36%,HES,q
+205,Museum of Archaeology and Anthropology,"76,669",F,-6%,UoCM,
+206,Inverewe Gardens,"76,351",C,-9%,NTS,
+207,Fort George,"76,169",C,6%,HES,
+208,National Museum of Flight,"74,696",C,-6%,NMS,
+209,WWT Llanelli,"74,486",C,3%,WWT,
+210,Brodick Castle & Country Park,"68,423",F/C,65%,NTS,jj
+211,Fyvie Castle,"66,039",F/C,12%,NTS,
+212,Scotland Street School Museum,"65,464",F,5.42%,GM,
+213,Newhailes,"65,395",C,-6%,NTS,kk
+214,Iona Abbey,"63,884",C,0%,HES,
+215,WWT Castle Espie,"63,673",C,7%,WWT,
+216,Melrose Abbey,"61,325",C,5%,HES,
+217,Pollok House,"57,099",C,-2%,NTS,
+218,Castle Fraser,"56,822",F/C,12%,NTS,
+219,St Andrews Cathedral,"54,511",C,-3%,HES,
+220,Benmore Botanic Garden,"53,420",C,9%,RBGE,
+221,The Polar Museum,"51,469",F,7%,UoCM,
+222,Falkland Palace,"49,329",C,2%,NTS,
+223,Pitmedden Garden & Museum of Farm Life,"48,106",C,10%,NTS,
+224,T Rex in Town at Kelvin Hall,"47,935",C,%,GM,ll
+225,Drum Castle,"47,446",F/C,-7%,NTS,
+226,Tantallon Castle,"45,798",C,6%,HES,
+227,Sudley House,"44,068",F,21%,NML,
+228,Bannockburn Heritage Centre,"43,427",C,-8%,NTS,
+229,Craigmillar Castle,"40,634",C,15%,HES,q
+230,Caerlaverock Castle,"39,143",C,11%,HES,
+231,Elgin Cathedral,"37,979",C,-4%,HES,
+232,Dawyck Botanic Garden,"37,051",C,4%,RBGE,
+233,Georgian House,"32,127",C,-7%,NTS,
+234,Dirleton Castle,"31,883",C,7%,HES,
+235,Hill House,"31,172",C,139%,NTS,mm
+236,WWT Welney,"30,762",C,5%,WWT,
+237,Jedburgh Abbey,"29,484",C,7%,HES,
+238,Maeshowe,"29,391",C,3%,HES,
+239,Dumbarton Castle,"29,197",C,2%,HES,
+240,Aston Hall,"28,804",C,-11%,BMT,nn
+241,Logan Botanic Garden,"28,761",C,14%,RBGE,
+242,Dunstaffnage Castle,"25,429",C,16%,HES,
+243,Culross Palace,"25,209",C,-1%,NTS,
+244,Aberdour Castle,"24,768",C,-10%,HES,
+245,Blakesley Hall,"24,726",C,34%,BMT,oo
+246,Haddo House,"24,380",F/C,60%,NTS,pp
+247,Craigievar Castle,"24,072",F/C,19%,NTS,
+248,Tenement House,"23,456",C,33%,NTS,
+249,Dunfermline Palace,"22,860",C,18%,HES,
+250,Jarlshof,"22,439",C,-3%,HES,
+251,Gladstone's Land,"20,065",C,67%,NTS,qq
+252,Museum of the Jewellery Quarter,"19,354",C,-10%,BMT,rr
+253,Kellie Castle,"18,938",C,6%,NTS,
+254,Broughton House & Garden,"18,917",C,8%,NTS,
+255,Leith Hall,"18,842",F/C,-3%,NTS,
+256,Greenbank Garden,"17,275",C,5%,NTS,
+257,Glasgow Museums Resource Centre,"17,232",F,-1.20%,GM,
+258,WWT Caerlaverock,"16,105",C,16%,WWT,ss
+259,Sarehole Mill,"14,383",C,-20%,BMT,tt
+260,Branklyn Garden,"14,115",C,15%,NTS,
+261,Museum of Classical Archaeology,"13,015",F,-12%,UoCM,
+262,Whipple Museum of the History of Science,"11,845",F,8%,UoCM,uu
+263,Keats House,"11,808",F/C,-1%,CLC,
+264,Soho House,"10,374",C,21%,BMT,vv
+265,Weoley Castle,"8,147",F,-2%,BMT,
+266,Museum Collection Centre,"2,407",F/C,27%,BMT,ww
